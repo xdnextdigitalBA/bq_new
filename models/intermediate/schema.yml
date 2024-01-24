@@ -1,0 +1,100 @@
+version: 2
+
+models:
+#Google Ads
+  - name: int_google_ads_unique_campaigns
+    description: '{{ doc("unique_campaigns") }}'
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - unique
+          - not_null
+  - name: int_google_ads_campaign_stats
+    description: '{{ doc("campaign_stats") }}'
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - not_null
+
+#Bing Ads
+  - name: int_bing_ads_unique_campaigns
+    description: '{{ doc("unique_campaigns") }}'
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - unique
+          - not_null
+  - name: int_bing_ads_campaign_performance_joined_campaign_names
+    description: '{{ doc("campaign_stats") }}'
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - not_null
+
+#Google Analytics
+  
+  - name: int_google_analytics_all_events_283762334
+    description: Enthält alle Events und NDG-Kampagnenschlüssel NEW-Wärme.
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - not_null
+  - name: int_google_analytics_all_events_314060132
+    description: Enthält alle Events und NDG-Kampagnenschlüssel NEW.
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - not_null
+  - name: int_google_analytics_all_events_345727078
+    description: Enthält alle Events und NDG-Kampagnenschlüssel KE.
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - not_null
+  - name: int_google_analytics_all_events
+    description: Enthält alle Events und NDG-Kampagnenschlüssel NEW + KE.
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - not_null
+  - name: int_google_analytics_all_campaigns
+    description: Enthält alle Kampagnen aus GA4 und GA3.
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - not_null
+  - name: int_google_analytics_NDG_conversionevents_GA4
+    description: |
+      Enthält alle relevanten Conversionevents aus Google Analytics 4 für NDG-Vermarktung. Inklusive aller E-Commerce-Events (ohne Metainformationen).
+      Für das Conversion-Event 'contact_form_button' wird nur die Landingpage evo-ag.de/pv-aktion gefiltert.
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - not_null
+      - name: ZielvorhabenID
+        description: Relevante ID für das Reporting von Next Digital.
+        tests:
+          - not_null
+      - name: ZielvorhabenName
+        description: Vorherige Bezeichnung = event_name
+      - name: Keyword
+        description: '{{ doc("keyword") }}'
+      - name: KeywordMatchType
+        description: '{{ doc("KeywordMatchType") }}'
+  - name: int_google_analytics_all_purchases_GA4
+    description: Enthält alle <purchase-events> aus Google Analytics 4. Inkl. aller zugehörigen Metainformationen aus GA4.
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - not_null

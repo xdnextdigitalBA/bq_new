@@ -1,0 +1,80 @@
+version: 2
+
+# Bei BigQuery:
+# database = project id
+# schema = dataset
+
+sources:
+  #Backenddaten
+  - name: new_backend
+    description: "alle Backenddaten"
+    project: data-ai-devel
+    dataset: new_stammdaten
+    tables:
+      - name: tr_abschluesse
+      
+  #Gemischte Quellen
+  - name: bingads
+    description: "Alle Bing Ads Daten Klick & NEW"
+    project: data-ai-devel  
+    dataset: bingads   
+    tables:
+      - name: campaign_performance_daily_report
+      - name: campaign_history
+  - name: google_ads
+    description: "alle Google Ads Daten Klick & NEW"
+    project: data-ai-devel  
+    dataset: google_ads 
+    tables:
+      - name: campaign_history
+      - name: campaign_stats      
+
+  - name: google_analytics_new_waerme
+    description: "alle Google Analytics Daten (Universal analytics)"
+    project: data-ai-devel  
+    dataset: google_analytics_new_waerme
+    tables:
+      - name: ua_basic_goals_per_day_excl_keywords
+
+#Google Analytics 4
+  #NEW
+  - name: analytics_314060132
+    description: "alle GA4 Daten NEW"
+    project: data-ai-devel  
+    dataset: analytics_314060132 
+    tables:
+      - name: events
+        identifier: "events_*"
+        loaded_at_field: "parse_timestamp(_table_suffix, '%Y%m%d')"
+        
+  #Klickenergie
+  - name: analytics_345727078
+    description: "alle GA4 Daten KE"
+    project: data-ai-devel  
+    dataset: analytics_345727078
+    tables:
+      - name: events
+        identifier: "events_*"
+  
+    #NEWWaerme Quellen
+  - name: analytics_283762334
+    description: "alle GA4 Daten NEWWAE"
+    project: data-ai-devel  
+    dataset: analytics_283762334
+    tables:
+      - name: events
+        identifier: "events_*"
+
+
+#Manuelle Datenuploads und historische Daten
+  - name: manual_data_upload
+    description: "enthält einmalig hochgeladene Daten, insb. historische Informationen"
+    project: data-ai-devel
+    dataset: manual_data_upload
+    tables:
+      - name: ua_historic_campaigns_new
+      - name: ua_historic_campaigns_ke
+      - name: ua_historic_transactions_new
+      - name: ua_historic_transactions_ke
+      - name: ua_historic_goal_conversions_new
+      - name: ua_historic_goal_conversions_newwae

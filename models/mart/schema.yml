@@ -1,0 +1,65 @@
+version: 2
+
+models:
+#Google Ads
+  - name: mrt_google_ads_basic_campaign_stats
+    description: '{{ doc("performancereporting_stats") }}'
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - not_null
+      - name: Keyword
+        description: '{{ doc("keyword") }}'
+      - name: KeywordMatchType
+        description: '{{ doc("KeywordMatchType") }}'
+#Bing Ads
+  - name: mrt_bing_ads_basic_campaign_stats
+    description: '{{ doc("performancereporting_stats") }}'
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - not_null
+      - name: Keyword
+        description: '{{ doc("keyword") }}'
+      - name: KeywordMatchType
+        description: '{{ doc("KeywordMatchType") }}'
+#Google Analytics
+  - name: mrt_google_analytics_campaign_webperformance
+    description: Enthält grundlegende Web-Performancewerte aller über GA4 erfassten Kampagnen.
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - not_null
+  - name: mrt_google_analytics_NDG_merged_ua_ga4_conversions_summarized
+    description: |
+      Enthält alle Conversiondaten bis einschl. 11.06.2023 aus Unisversal Analytics, alle Conversions ab 11.06.2023 aus Google Analytics 4.
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+      - name: Keyword
+        description: '{{ doc("keyword") }}'
+      - name: KeywordMatchType
+        description: '{{ doc("KeywordMatchType") }}'
+  - name: mrt_google_analytics_merged_ua_ga4_transactions_summarized
+    description: Enthält alle aggregierten Transaktionen bis einschl. 04.06.2023 (NEW) bzw. 26.06.2023 (KE) aus Universal Analytics, alle späteren Transaktionen stammen aus GA4. Enthält keine Detailinformationen je Transaktion.
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+      - name: Keyword
+        description: '{{ doc("keyword") }}'
+      - name: KeywordMatchType
+        description: '{{ doc("KeywordMatchType") }}'
+
+#Multi-Source_Models
+  - name: mrt_metainformation_campaigns
+    description: Enthält Kampagnen aus allen Quelldatensystemen mit Metainformationen.
+    columns:
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - not_null 
+      - name: IsPaid
+        description: true = bezahlte Kampagne 
