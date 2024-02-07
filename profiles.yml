@@ -1,13 +1,13 @@
 bq_new:
   outputs:
     dev:
-      dataset: test_dbt_2
+      dataset: dev_dbt
       job_execution_timeout_seconds: 300
       job_retries: 1
       location: EU
       method: oauth
       priority: interactive
-      project: data-ai-devel
+      project: new-ads-bigquery-data
       threads: 4
       type: bigquery
     prod:
