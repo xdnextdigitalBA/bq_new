@@ -1,0 +1,35 @@
+jobs:
+# Give each job a unique name. The name will be displayed in the Fivetran dashboard once your jobs are imported.
+# Job names must be unique.
+
+
+ - name: Test
+   targetName: dev
+   schedule: '0 5 */1 * *' # Jeden Morgen um 05:00 Uhr
+   steps:
+     - name: Step 01 - Bing
+       command: dbt run --models staging.bing_ads.*,tag:daily
+     - name: Step 01 - Google
+       command: dbt run --models staging.google_ads.*,tag:daily
+
+
+ #- name: Täglich
+ #  targetName: dev
+ #  schedule: '0 5 */1 * *' # Jeden Morgen um 05:00 Uhr
+ #  steps:
+ #    - name: Step 01 - Staging
+ #      command: dbt run -m staging,tag:daily
+ #    - name: Step 02 - Intermediate
+ #      command: dbt run -m intermediate,tag:daily
+ #    - name: Step 03 - Mart
+ #      command: dbt run -m mart,tag:daily
+ #- name: Alle 3 Stunden
+ #  targetName: dev
+ #  schedule: '0 */3 * * *' # The example will run every 1 hours. Note that the cron string is quoted as otherwise it will be treated as invalid alias node (see https://yaml.org/spec/1.2/spec.html#*%20alias// for details)
+ #  steps:
+ #    - name: Step 01 - Staging
+ #      command: dbt run -m staging --exclude tag:daily tag:historic
+ #    - name: Step 02 - Intermediate
+ #      command: dbt run -m intermediate --exclude tag:daily tag:historic
+ #    - name: Step 03 - Mart
+ #      command: dbt run -m mart --exclude tag:daily tag:historic
