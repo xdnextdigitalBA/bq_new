@@ -4,7 +4,7 @@ bq_new:
       dataset: dev_dbt
       job_execution_timeout_seconds: 300
       job_retries: 1
-      location: EU
+      location: europe-west3
       method: oauth
       priority: interactive
       project: new-ads-bigquery-data
@@ -14,10 +14,10 @@ bq_new:
       dataset: dev_dbt
       job_execution_timeout_seconds: 300
       job_retries: 1
-      location: EU
+      location: europe-west3
       method: oauth
       priority: interactive
       project: new-ads-bigquery-data
       threads: 4
       type: bigquery
-  target: prod
+  target: dev
