@@ -16,14 +16,14 @@ sources:
   #Gemischte Quellen
   - name: bingads
     description: "Alle Bing Ads Daten Klick & NEW"
-    project: data-ai-devel  
+    project: new-ads-bigquery-data
     dataset: bingads   
     tables:
       - name: campaign_performance_daily_report
       - name: campaign_history
   - name: google_ads
     description: "alle Google Ads Daten Klick & NEW"
-    project: data-ai-devel  
+    project: new-ads-bigquery-data 
     dataset: google_ads 
     tables:
       - name: campaign_history
@@ -69,7 +69,7 @@ sources:
 #Manuelle Datenuploads und historische Daten
   - name: manual_data_upload
     description: "enthält einmalig hochgeladene Daten, insb. historische Informationen"
-    project: data-ai-devel
+    project: new-ads-bigquery-data
     dataset: manual_data_upload
     tables:
       - name: ua_historic_campaigns_new

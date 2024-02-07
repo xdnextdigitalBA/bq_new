@@ -10,4 +10,14 @@ bq_new:
       project: data-ai-devel
       threads: 4
       type: bigquery
-  target: dev
+    prod:
+      dataset: dev_dbt
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: EU
+      method: oauth
+      priority: interactive
+      project: new-ads-bigquery-data
+      threads: 4
+      type: bigquery
+  target: prod
