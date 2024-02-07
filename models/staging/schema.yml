@@ -166,17 +166,122 @@ models:
   - name: stg_google_analytics_historic_campaigns_new
     description: Enthält alle historischen Kampagnen aus Universal Analytics / GA3
     columns:
+      - name: Campaign
+        description: '{{ doc("campaign_name") }}'
+      - name: Partner
+        description: '{{ doc("Partner") }}'
+      - name: Source
+        description: '{{ doc("source_medium_manual") }}'
+      - name: Medium
+        description: '{{ doc("source_medium_manual") }}'
       - name: CampaignID
         description: '{{ doc("campaignID") }}'
+
   - name: stg_google_analytics_historic_campaigns_ke
     description: Enthält alle historischen Kampagnen aus Universal Analytics / GA3
-    columns:
+      - name: Campaign
+        description: '{{ doc("campaign_name") }}'
+      - name: Partner
+        description: '{{ doc("Partner") }}'
+      - name: Source
+        description: '{{ doc("source_medium_manual") }}'
+      - name: Medium
+        description: '{{ doc("source_medium_manual") }}'
       - name: CampaignID
         description: '{{ doc("campaignID") }}'
 
   - name: stg_google_analytics_historic_transactions_new
     description: Enthält alle historischen Transaktionen aus Universal Analytics / GA3
     columns:
+      - name: Date
+        description: Datum der Transaktionen je Kampagne.
+      - name: Campaign
+        description: '{{ doc("campaign_name") }}'
+      - name: Medium
+        description: '{{ doc("source_medium_manual") }}'
+      - name: Source
+        description: '{{ doc("source_medium_manual") }}'
+      - name: ProductCategory
+        description: '{{ doc("productcategory") }}'
+      - name: Transactions
+        description: '{{ doc("transactions") }}'
+      - name: Keyword
+        description: '{{ doc("keyword") }}'
+      - name: KeywordMatchType
+        description: '{{ doc("KeywordMatchType") }}'
+      - name: Partner
+        description: '{{ doc("Partner") }}'
       - name: CampaignID
         description: '{{ doc("campaignID") }}'
 
+  - name: stg_google_analytics_historic_transactions_ke
+    description: Enthält alle historischen Transaktionen aus Universal Analytics / GA3
+    columns:
+      - name: Date
+        description: Datum der Transaktionen je Kampagne.
+      - name: Campaign
+        description: '{{ doc("campaign_name") }}'
+      - name: Medium
+        description: '{{ doc("source_medium_manual") }}'
+      - name: Source
+        description: '{{ doc("source_medium_manual") }}'
+      - name: ProductCategory
+        description: '{{ doc("productcategory") }}'
+      - name: Transactions
+        description: '{{ doc("transactions") }}'
+      - name: Keyword
+        description: '{{ doc("keyword") }}'
+      - name: KeywordMatchType
+        description: '{{ doc("KeywordMatchType") }}'
+      - name: Partner
+        description: '{{ doc("Partner") }}'
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+
+  - name: stg_google_analytics_historic_goal_conversions_new
+    description: Enthält alle historischen Zielvorhaben-Conversions aus Universal Analytics / GA3
+    columns:
+      - name: Date
+        description: Datum der Conversion je Kampagne.
+      - name: Campaign
+        description: '{{ doc("campaign_name") }}'
+      - name: Medium
+        description: '{{ doc("source_medium_manual") }}'
+      - name: Source
+        description: '{{ doc("source_medium_manual") }}'
+      - name: Keyword
+        description: '{{ doc("keyword") }}'
+      - name: KeywordMatchType
+        description: '{{ doc("KeywordMatchType") }}'
+      - name: NameZielvorhaben
+        description: '{{ doc("namezielvorhaben") }}'
+      - name: Conversions
+        description: '{{ doc("conversions") }}'  
+      - name: Partner
+        description: '{{ doc("Partner") }}'
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+
+  - name: stg_google_analytics_historic_goal_conversions_newwae
+    description: Enthält alle historischen Zielvorhaben-Conversions aus Universal Analytics / GA3
+    columns:
+      - name: Date
+        description: Datum der Conversion je Kampagne.
+      - name: Campaign
+        description: '{{ doc("campaign_name") }}'
+      - name: Medium
+        description: '{{ doc("source_medium_manual") }}'
+      - name: Source
+        description: '{{ doc("source_medium_manual") }}'
+      - name: Keyword
+        description: '{{ doc("keyword") }}'
+      - name: KeywordMatchType
+        description: '{{ doc("KeywordMatchType") }}'
+      - name: NameZielvorhaben
+        description: '{{ doc("namezielvorhaben") }}'
+      - name: Conversions
+        description: '{{ doc("conversions") }}'  
+      - name: Partner
+        description: '{{ doc("Partner") }}'
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'

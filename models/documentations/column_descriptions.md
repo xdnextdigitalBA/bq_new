@@ -42,11 +42,11 @@ Gerät über das das Event generiert wurde (bspw. Anzeigenklick oder Sitzungsbeg
 {% enddocs %}
 
 {% docs campaign_name %}
-Kampagnenname wie in der jeweiligen Nutzeroberfläche angezeigt.
+Kampagnenname wie in der jeweiligen Nutzeroberfläche angezeigt, bzw. entspricht dem Wert des gleichnamigen UTM-Parameters.
 {% enddocs %}
 
 {% docs source_medium_manual %}
-Manuell durch NDG gesetzt Quelle/Medium.
+Entspricht den Werten der gleichnamigen UTM-Parametern.
 {% enddocs %}
 
 {% docs keyword %}
@@ -55,4 +55,20 @@ Aufgrund enormer Speicherauswirkungen wird die Spalte aus den Datenquellen nicht
 
 {% docs KeywordMatchType %}
 Aufgrund enormer Speicherauswirkungen wird die Spalte aus den Datenquellen nicht bezogen. Enthält daher zum Status-Quo keine Informationen (22.01.2024).
+{% enddocs %}
+
+{% docs productcategory %}
+Produktkategorie gemäß E-Commerce-Tracking (Gas, Strom, Heizstrom, Autostrom)
+{% enddocs %}
+
+{% docs transactions %}
+Die Summe der Transaktionen gemäß E-Commerce-Tracking für eine bestimmte Kampagne und ein bestimmtes Produkt (bzw. Produktkategorie) an einem bestimmten Tag.
+{% enddocs %}
+
+{% docs namezielvorhaben %}
+Name des jeweiligen Zielvorhabens wie in Analytics angelegt.
+{% enddocs %}
+
+{% docs conversions %}
+Anzahl der Conversions für das Zielvorhaben. Bei Daten aus Google Analytics 4 entspricht dies einfach der Anzahl der Ereignisse mit dem Namen.
 {% enddocs %}
