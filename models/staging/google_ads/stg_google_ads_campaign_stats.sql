@@ -11,6 +11,12 @@ WITH _raw AS(
     SELECT * 
     FROM {{source('google_ads','campaign_stats')}}
 
+{% if is_incremental() %}
+    WHERE
+        date >= DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY)
+        
+{% endif %} 
+
 ),
 
 _transformed_cost AS(
