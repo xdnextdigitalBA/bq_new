@@ -29,19 +29,27 @@ sources:
       - name: campaign_history
       - name: campaign_stats      
 
-  - name: google_analytics_new_waerme
-    description: "alle Google Analytics Daten (Universal analytics)"
-    project: data-ai-devel  
-    dataset: google_analytics_new_waerme
-    tables:
-      - name: ua_basic_goals_per_day_excl_keywords
+#  - name: google_analytics_new_waerme
+#    description: "alle Google Analytics Daten (Universal analytics)"
+#    project: data-ai-devel  
+#    dataset: google_analytics_new_waerme
+#    tables:
+#      - name: ua_basic_goals_per_day_excl_keywords
 
 #Google Analytics 4
   #NEW
   - name: analytics_314060132
     description: "alle GA4 Daten NEW"
-    project: data-ai-devel  
+    project: new-ads-bigquery-data  
     dataset: analytics_314060132 
+    tables:
+      - name: events
+        identifier: "events_*"
+        loaded_at_field: "parse_timestamp(_table_suffix, '%Y%m%d')"
+  - name: analytics_314060132_copy
+    description: "alle migrierten GA4 Daten NEW"
+    project: new-ads-bigquery-data  
+    dataset: analytics_314060132_copy
     tables:
       - name: events
         identifier: "events_*"
@@ -50,17 +58,24 @@ sources:
   #Klickenergie
   - name: analytics_345727078
     description: "alle GA4 Daten KE"
-    project: data-ai-devel  
+    project: new-ads-bigquery-data
     dataset: analytics_345727078
     tables:
       - name: events
         identifier: "events_*"
-  
+  - name: analytics_345727078_copy
+    description: "alle migrierten GA4 Daten KE"
+    project: new-ads-bigquery-data
+    dataset: analytics_345727078_copy
+    tables:
+      - name: events
+        identifier: "events_*"
+
     #NEWWaerme Quellen
-  - name: analytics_283762334
-    description: "alle GA4 Daten NEWWAE"
-    project: data-ai-devel  
-    dataset: analytics_283762334
+  - name: analytics_283762334_copy
+    description: "alle migrierten GA4 Daten NEWWAE"
+    project: new-ads-bigquery-data
+    dataset: analytics_283762334_copy
     tables:
       - name: events
         identifier: "events_*"

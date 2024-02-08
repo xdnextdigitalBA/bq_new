@@ -138,7 +138,7 @@ WITH _source AS(
     collected_traffic_source.dclid as dclid,
     collected_traffic_source.srsltid as srsltid
 
-  FROM {{ source('analytics_283762334', 'events')}} as events
+  FROM {{ source('analytics_283762334_copy', 'events')}} as events
   LEFT JOIN UNNEST (event_params) as params
   LEFT JOIN UNNEST(items) as items 
 {% if is_incremental() %}
