@@ -46,7 +46,7 @@ Kampagnenname wie in der jeweiligen Nutzeroberfläche angezeigt, bzw. entspricht
 {% enddocs %}
 
 {% docs source_medium_manual %}
-Entspricht den Werten der gleichnamigen UTM-Parametern.
+Entspricht den Werten der gleichnamigen UTM-Parameter.
 {% enddocs %}
 
 {% docs keyword %}

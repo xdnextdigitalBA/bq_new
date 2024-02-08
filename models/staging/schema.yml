@@ -179,6 +179,7 @@ models:
 
   - name: stg_google_analytics_historic_campaigns_ke
     description: Enthält alle historischen Kampagnen aus Universal Analytics / GA3
+    columns:
       - name: Campaign
         description: '{{ doc("campaign_name") }}'
       - name: Partner
