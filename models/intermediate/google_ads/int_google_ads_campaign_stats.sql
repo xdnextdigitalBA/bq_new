@@ -1,6 +1,24 @@
+{{
+  config(
+    partition_by = {
+      'field': 'date', 
+      'data_type': 'date', 
+      'granularity': 'day'},
+    incremental_strategy = 'insert_overwrite',
+    unique_key=['date', 'id', 'ad_network_type', 'device'],
+    on_schema_change='sync_all_columns'
+    )
+}}
+
 WITH _raw_stats AS (
   SELECT *
   FROM {{ ref('stg_google_ads_campaign_stats')}}
+
+{% if is_incremental() %}
+    WHERE
+        date >= DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY)
+        
+{% endif %} 
 ),
 
 _select_stats_columns AS(

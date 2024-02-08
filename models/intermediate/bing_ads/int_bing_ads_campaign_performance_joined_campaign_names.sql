@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized = 'view'
+  )
+}}
+
 WITH _raw_performance AS(
     SELECT *
     FROM {{ ref('stg_bing_ads_campaign_performance_daily_report')}}
