@@ -1,7 +1,5 @@
 {{
   config(
-    unique_key=['Date', 'CampaignID'],
-    on_schema_change='sync_all_columns',
     tags=["performancereporting", "vermarktungsdashboard", "google analytics"]
     )
 }}
@@ -9,14 +7,6 @@
 WITH _raw AS(
     SELECT *
     FROM {{ ref('int_google_analytics_all_events')}}
-
-    {% if is_incremental() %}
-
-      WHERE
-      --Update table for the past seven days + today
-      event_date >= current_date()-7
-        
-    {% endif %}
 ),
 
 sessions_by_campaign AS(
