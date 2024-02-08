@@ -1,6 +1,24 @@
+{{
+  config(
+    partition_by = {
+      'field': 'Date', 
+      'data_type': 'date', 
+      'granularity': 'day'},
+    incremental_strategy = 'insert_overwrite',
+    unique_key=['event_id'],
+    on_schema_change='sync_all_columns'
+    )
+}}
+
 WITH _raw AS(
   SELECT *
   FROM {{ ref('int_google_analytics_all_events')}}
+
+{% if is_incremental() %}
+    WHERE
+        event_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY)
+        
+{% endif %} 
 ),
 
 _conversions_NDG as(

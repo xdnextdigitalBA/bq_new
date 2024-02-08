@@ -1,6 +1,37 @@
+{{
+  config(
+    partition_by = {
+      'field': 'event_date', 
+      'data_type': 'date', 
+      'granularity': 'day'},
+    incremental_strategy = 'insert_overwrite',
+    unique_key=['event_id'],
+    on_schema_change='sync_all_columns'
+    )
+}}
+
 WITH _raw AS(
-    SELECT *
+    SELECT *,
+-- generate surrogate 'event' ID
+        {{ dbt_utils.generate_surrogate_key([
+           'event_ts',
+           'event_name',
+           'user_pseudo_id',
+           'page_title',
+           'page_location',
+           'page_referrer',
+           'page_path',
+           'percent_scrolled',
+           'session_engaged'
+        ]) }} AS event_id
     FROM {{ ref('stg_google_analytics_314060132')}}
+
+{% if is_incremental() %}
+    WHERE
+        event_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY)
+        
+{% endif %} 
+
 ),
 
 _added_partner AS(
