@@ -158,6 +158,7 @@ WITH _source AS(
 
 events_aggregated as (
   SELECT
+    event_id,
     event_date,
     event_ts,
     session_id,
@@ -277,7 +278,7 @@ events_aggregated as (
 
   FROM _source
   WHERE session_id <> 0
-  GROUP BY 1,2,3,4,5,6
+  GROUP BY 1,2,3,4,5,6,7
 )
 
 SELECT *
