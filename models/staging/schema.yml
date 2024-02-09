@@ -890,16 +890,6 @@ models:
 
 
 
-
-
-
-
-
-
-
-
-
-
   - name: stg_google_analytics_historic_campaigns_new
     description: Enthält alle historischen Kampagnen aus Universal Analytics / GA3
     columns:
@@ -913,13 +903,7 @@ models:
         description: '{{ doc("Medium") }}'
       - name: CampaignID
         description: '{{ doc("campaignID") }}'
-      
-
-
-
-
-
-
+   
 
 
 
@@ -936,6 +920,9 @@ models:
         description: '{{ doc("Medium") }}'
       - name: CampaignID
         description: '{{ doc("campaignID") }}'
+
+
+
 
   - name: stg_google_analytics_historic_transactions_new
     description: Enthält alle historischen Transaktionen aus Universal Analytics / GA3
