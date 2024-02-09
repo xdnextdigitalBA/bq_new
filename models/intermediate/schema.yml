@@ -17,23 +17,188 @@ models:
         description: '{{ doc("campaignID") }}'
         tests:
           - not_null
+      - name: _fivetran_id
+        description: '{{ doc("_fivetran_id") }}'
+      - name: customer_id
+        description: '{{ doc("customer_id") }}'
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+      - name: active_view_impressions
+        description: '{{ doc("active_view_impressions") }}'
+      - name: active_view_measurability
+        description: '{{ doc("active_view_measurability") }}'
+      - name: active_view_measurable_cost_micros
+        description: '{{ doc("active_view_measurable_cost_micros") }}'
+      - name: active_view_measurable_impressions
+        description: '{{ doc("active_view_measurable_impressions") }}'
+      - name: active_view_viewability
+        description: '{{ doc("active_view_viewability") }}'
+      - name: ad_network_type
+        description: '{{ doc("ad_network_type") }}'
+      - name: base_campaign
+        description: '{{ doc("base_campaign") }}'
+      - name: conversions_value
+        description: '{{ doc("conversions_value") }}'
+      - name: interaction_event_types
+        description: '{{ doc("interaction_event_types") }}'
+      - name: interactions
+        description: '{{ doc("interactions") }}'
+      - name: c_id
+        description: '{{ doc("c_id") }}'
+
+
+
+
+
+
+
 
 #Bing Ads
   - name: int_bing_ads_unique_campaigns
     description: '{{ doc("unique_campaigns") }}'
     columns:
+      - name: id
+        description: '{{ doc("id") }}'
+      - name: Campaign
+        description: '{{ doc("campaign_name") }}'
+      - name: Source
+        description: '{{ doc("source_medium_manual") }}'
+      - name: Medium
+        description: '{{ doc("source_medium_manual") }}'
+      - name: Partner
+        description: '{{ doc("Partner") }}'
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+        tests:
+          - unique
+          - not_null    
+
+  - name: int_bing_ads_campaign_performance_joined_campaign_names
+    description: '{{ doc("campaign_stats") }}'
+    columns:
+      - name: id
+        description: '{{ doc("werbepartner_campaign_id") }}'
+      - name: Campaign
+        description: '{{ doc("campaign_name") }}'
+      - name: Source
+        description: '{{ doc("source_medium_manual") }}'
+      - name: Medium
+        description: '{{ doc("source_medium_manual") }}'
+      - name: Partner
+        description: '{{ doc("Partner") }}'
       - name: CampaignID
         description: '{{ doc("campaignID") }}'
         tests:
           - unique
           - not_null
-  - name: int_bing_ads_campaign_performance_joined_campaign_names
-    description: '{{ doc("campaign_stats") }}'
-    columns:
-      - name: CampaignID
-        description: '{{ doc("campaignID") }}'
-        tests:
-          - not_null
+      - name: _fivetran_synced
+        description: '{{ doc("fivetran") }}'
+      - name: account_id
+        description: '{{ doc("account_id") }}'
+      - name: ad_distribution
+        description: '{{ doc("ad_distribution") }}'
+      - name: ad_relevance
+        description: '{{ doc("ad_relevance") }}'
+      - name: all_conversions
+        description: '{{ doc("all_conversions") }}'      
+      - name: all_conversions_qualified
+        description: '{{ doc("all_conversions_qualified") }}'
+      - name: all_return_on_ad_spend
+        description: '{{ doc("all_return_on_ad_spend") }}'
+      - name: all_revenue
+        description: '{{ doc("all_revenue") }}'
+      - name: assists
+        description: '{{ doc("assists") }}'
+      - name: average_cpc
+        description: '{{ doc("average_cpc") }}'
+      - name: average_position
+        description: '{{ doc("average_position") }}'
+      - name: bid_match_type
+        description: '{{ doc("bid_match_type") }}'
+      - name: budget_association_status
+        description: '{{ doc("budget_association_status") }}'
+      - name: campaign_id
+        description: '{{ doc("campaign_id") }}'
+      - name: campaign_name
+        description: '{{ doc("campaign_name") }}'
+      - name: campaign_status
+        description: '{{ doc("campaign_status") }}'
+      - name: Clicks
+        description: '{{ doc("Clicks") }}'
+      - name: conversions
+        description: '{{ doc("conversions_camp") }}'
+      - name: conversions_qualified
+        description: '{{ doc("conversions_qualified") }}'
+      - name: ctr
+        description: '{{ doc("ctr") }}'
+      - name: currency_code
+        description: '{{ doc("currency_code") }}'
+      - name: Date
+        description: '{{ doc("Date") }}'
+      - name: delivered_match_type
+        description: '{{ doc("delivered_match_type") }}'
+      - name: device_os
+        description: '{{ doc("device_os") }}'
+      - name: device_type
+        description: '{{ doc("device_type") }}'
+      - name: expected_ctr
+        description: '{{ doc("expected_ctr") }}'
+      - name: historical_ad_relevance
+        description: '{{ doc("historical_ad_relevance") }}'
+      - name: historical_expected_ctr
+        description: '{{ doc("historical_expected_ctr") }}'
+      - name: historical_landing_page_experience
+        description: '{{ doc("historical_landing_page_experience") }}'
+      - name: historical_quality_score
+        description: '{{ doc("historical_quality_score") }}'
+      - name: Impressions
+        description: '{{ doc("Impressions") }}'
+      - name: landing_page_experience
+        description: '{{ doc("landing_page_experience") }}'
+      - name: low_quality_clicks
+        description: '{{ doc("low_quality_clicks") }}'
+      - name: low_quality_clicks_percent
+        description: '{{ doc("low_quality_clicks_percent") }}'
+      - name: low_quality_conversion_rate
+        description: '{{ doc("low_quality_conversion_rate") }}'
+      - name: low_quality_conversions
+        description: '{{ doc("low_quality_conversions") }}'
+      - name: low_quality_conversions_qualified
+        description: '{{ doc("low_quality_conversions_qualified") }}'
+      - name: low_quality_general_clicks
+        description: '{{ doc("low_quality_general_clicks") }}'
+      - name: low_quality_impressions
+        description: '{{ doc("low_quality_impressions") }}'
+      - name: low_quality_impressions_percent
+        description: '{{ doc("low_quality_impressions_percent") }}'
+      - name: low_quality_sophisticated_clicks
+        description: '{{ doc("low_quality_sophisticated_clicks") }}'
+      - name: network
+        description: '{{ doc("network") }}'
+      - name: phone_calls
+        description: '{{ doc("phone_calls") }}'
+      - name: phone_impressions
+        description: '{{ doc("phone_impressions") }}'
+      - name: quality_score
+        description: '{{ doc("quality_score") }}'
+      - name: return_on_ad_spend
+        description: '{{ doc("return_on_ad_spend") }}'
+      - name: revenue
+        description: '{{ doc("revenue") }}'
+      - name: Cost
+        description: '{{ doc("Cost") }}'
+      - name: top_vs_other
+        description: '{{ doc("top_vs_other") }}'
+      - name: view_through_conversions
+        description: '{{ doc("view_through_conversions") }}'
+
+
+
+
+
+
+
+
 
 #Google Analytics
   
