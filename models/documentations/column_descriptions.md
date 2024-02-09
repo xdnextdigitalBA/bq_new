@@ -45,7 +45,11 @@ Gerät über das das Event generiert wurde (bspw. Anzeigenklick oder Sitzungsbeg
 Kampagnenname wie in der jeweiligen Nutzeroberfläche angezeigt, bzw. entspricht dem Wert des gleichnamigen UTM-Parameters.
 {% enddocs %}
 
-{% docs source_medium_manual %}
+{% docs Source %}
+Entspricht den Werten der gleichnamigen UTM-Parameter.
+{% enddocs %}
+
+{% docs Medium %}
 Entspricht den Werten der gleichnamigen UTM-Parameter.
 {% enddocs %}
 
@@ -133,10 +137,6 @@ Eindeutige Identifikationsnummer einer Kampagne.
 Aktueller Status der Kampagne (z.B. aktiv, pausiert).
 {% enddocs %}
 
-{% docs Clicks%}
-Anzahl der Klicks auf die Anzeigen.
-{% enddocs %}
-
 {% docs conversions_camp%}
 Anzahl der Conversions (direkt für die Kampagne hinterlegte Conversions).
 {% enddocs %}
@@ -187,10 +187,6 @@ Historische Erfahrung mit der Landing-Page, basierend auf früheren Leistungen.
 
 {% docs historical_quality_score%}
 Historischer Qualitätsfaktor der Anzeige, basierend auf früheren Leistungen.
-{% enddocs %}
-
-{% docs Impressions%}
-Anzahl der Male, die eine Anzeige angezeigt wurde.
 {% enddocs %}
 
 {% docs landing_page_experience%}
@@ -257,10 +253,6 @@ Ertrag im Verhältnis zu den Werbeausgaben.
 Einnahmen aus der Kampagne.
 {% enddocs %}
 
-{% docs Cost%}
-Gesamtkosten der Kampagne.
-{% enddocs %}
-
 {% docs top_vs_other%}
 Vergleich der Anzeigenpositionierung an der Spitze vs. andere Positionen.
 {% enddocs %}
@@ -323,6 +315,473 @@ Gesamtzahl der Interaktionen mit der Anzeige, einschließlich Klicks und anderen
 
 {% docs c_id%}
 Ein alternativer oder verkürzter Bezeichner für die Kunden-ID.
+{% enddocs %}
+
+
+
+
+
+{% docs modified_time%}
+Zeitpunkt der letzten Änderung der Kampagneneinstellungen oder -daten.
+{% enddocs %}
+
+{% docs bid_adjustment%}
+Anpassungsfaktor für Gebote, um die Sichtbarkeit in bestimmten Zielgruppen oder Geräten zu erhöhen oder zu verringern.
+{% enddocs %}
+
+{% docs bid_strategy_max_cpc%}
+Maximaler Kosten-pro-Klick (CPC), der im Rahmen einer Gebotsstrategie festgelegt wird.
+{% enddocs %}
+
+{% docs bid_strategy_target_cpa%}
+Ziel-Kosten-pro-Akquise (CPA), die die Gebotsstrategie zu erreichen versucht.
+{% enddocs %}
+
+{% docs bid_strategy_type%}
+Typ der Gebotsstrategie, die angewendet wird (z.B. manuell, automatisiert).
+{% enddocs %}
+
+{% docs budget%}
+Das für die Kampagne zugewiesene Gesamtbudget.
+{% enddocs %}
+
+{% docs budget_id%}
+Eindeutige Identifikationsnummer des Budgets.
+{% enddocs %}
+
+{% docs country_code%}
+Ländercode des Zielmarktes der Kampagne.
+{% enddocs %}
+
+{% docs domain_language%}
+Sprache des Ziel-Domain, auf den die Kampagne ausgerichtet ist.
+{% enddocs %}
+
+{% docs language%}
+Sprache, in der die Kampagne ausgeführt wird.
+{% enddocs %}
+
+{% docs local_inventory_ads_enabled%}
+Kennzeichnung, ob Anzeigen für lokales Inventar aktiviert sind.
+{% enddocs %}
+
+{% docs name%}
+Name der Kampagne oder des Anzeigenelements.
+{% enddocs %}
+
+{% docs priority%}
+Prioritätsstufe der Kampagne oder des Anzeigenelements.
+{% enddocs %}
+
+{% docs status%}
+Aktueller Status der Kampagne oder des Anzeigenelements (z.B. aktiv, pausiert).
+{% enddocs %}
+
+{% docs store_id%}
+Eindeutige Identifikationsnummer des Geschäfts oder der Filiale in Verbindung mit der Kampagne.
+{% enddocs %}
+
+{% docs sub_type%}
+Spezifischer Untertyp der Kampagne oder des Anzeigenelements.
+{% enddocs %}
+
+{% docs time_zone%}
+Zeitzone, in der die Kampagne betrieben wird.
+{% enddocs %}
+
+{% docs tracking_template%}
+Vorlage für das Tracking von URLs, um die Leistung zu überwachen.
+{% enddocs %}
+
+{% docs type%}
+Art der Kampagne oder des Anzeigenelements.
+{% enddocs %}
+
+{% docs website%}
+Website-URL, die in der Kampagne beworben wird.
+{% enddocs %}
+
+
+
+
+{% docs event_id%}
+Eindeutige ID des Ereignisses.
+{% enddocs %}
+
+{% docs event_date%}
+Datum, an dem das Ereignis aufgetreten ist.
+{% enddocs %}
+
+{% docs event_ts%}
+Zeitstempel des Ereignisses.
+{% enddocs %}
+
+{% docs session_id%}
+Eindeutige ID der Sitzung, in der das Ereignis aufgetreten ist.
+{% enddocs %}
+
+{% docs user_pseudo_id%}
+Pseudonymisierte ID des Nutzers.
+{% enddocs %}
+
+{% docs user_first_touch_ts%}
+Zeitstempel der ersten Interaktion des Nutzers mit der App/Website.
+{% enddocs %}
+
+{% docs event_name%}
+Name des Ereignisses.
+{% enddocs %}
+
+{% docs utm_campaign%}
+Name der UTM-Kampagne für das Tracking.
+{% enddocs %}
+
+{% docs utm_medium%}
+Medium der UTM-Kampagne, z.B. E-Mail, CPC.
+{% enddocs %}
+
+{% docs utm_source%}
+Quelle der UTM-Kampagne, z.B. Google, Newsletter.
+{% enddocs %}
+
+{% docs page_title%}
+Titel der Seite, auf der das Ereignis aufgetreten ist.
+{% enddocs %}
+
+{% docs page_location%}
+URL der Seite, auf der das Ereignis aufgetreten ist.
+{% enddocs %}
+
+{% docs page_referrer%}
+Die referierende URL, von der der Nutzer gekommen ist.
+{% enddocs %}
+
+{% docs page_path%}
+Pfad der Seite im Kontext der Website.
+{% enddocs %}
+
+{% docs percent_scrolled%}
+Prozent des Scrollens auf einer Seite.
+{% enddocs %}
+
+{% docs session_engaged%}
+Indikator, ob der Nutzer in der Sitzung engagiert war.
+{% enddocs %}
+
+{% docs analytics_storage%}
+Einstellung für die Speicherung von Analytikdaten.
+{% enddocs %}
+
+{% docs ads_storage%}
+Einstellung für die Speicherung von Werbedaten.
+{% enddocs %}
+
+{% docs uses_transient_token%}
+Nutzung von transienten Tokens.
+{% enddocs %}
+
+{% docs ltv_revenue%}
+User Lifetime Value (Umsatz).
+{% enddocs %}
+
+{% docs ltv_currency%}
+Währung des User Lifetime Values.
+{% enddocs %}
+
+{% docs device_category%}
+Kategorie des Gerätes, z.B. Smartphone, Tablet.
+{% enddocs %}
+
+{% docs device_brand%}
+Markenname des Gerätes.
+{% enddocs %}
+
+{% docs device_model_name%}
+Modellname des Gerätes.
+{% enddocs %}
+
+{% docs device_marketing_name%}
+Marketingname des Gerätes.
+{% enddocs %}
+
+{% docs device_mobile_os_hardware_model%}
+Hardwaremodell des mobilen Betriebssystems.
+{% enddocs %}
+
+{% docs device_os_version%}
+Version des Betriebssystems auf dem Gerät.
+{% enddocs %}
+
+{% docs device_vendor_id%}
+Eindeutige ID des Geräteherstellers.
+{% enddocs %}
+
+{% docs device_advertising_id%}
+Werbe-ID des Gerätes.
+{% enddocs %}
+
+{% docs device_language%}
+Spracheinstellung des Gerätes.
+{% enddocs %}
+
+{% docs device_is_limited_ad_tracking%}
+Anzeige, ob der Nutzer Ad-Tracking limitiert hat.
+{% enddocs %}
+
+{% docs device_time_zone_offset_seconds%}
+Zeitverschiebung des Gerätes zur UTC in Sekunden.
+{% enddocs %}
+
+{% docs device_browser%}
+Browser auf dem Gerät.
+{% enddocs %}
+
+{% docs device_browser_version%}
+Version des Browsers auf dem Gerät.
+{% enddocs %}
+
+{% docs device_web_info_browser%}
+Browserinformationen des Gerätes.
+{% enddocs %}
+
+{% docs device_web_info_browser_version%}
+Browser-Version des Gerätes.
+{% enddocs %}
+
+{% docs browser_web_info_hostname%}
+Hostname des Browsers.
+{% enddocs %}
+
+{% docs continent%}
+Kontinent des Nutzers.
+{% enddocs %}
+
+{% docs country%}
+Land des Nutzers.
+{% enddocs %}
+
+{% docs region%}
+Region des Nutzers.
+{% enddocs %}
+
+{% docs city%}
+Stadt des Nutzers.
+{% enddocs %}
+
+{% docs sub_continent%}
+Subkontinent des Nutzers.
+{% enddocs %}
+
+{% docs metropolitan_area%}
+Metropolregion des Nutzers.
+{% enddocs %}
+
+{% docs app_id%}
+Eindeutige ID der App.
+{% enddocs %}
+
+{% docs app_version%}
+Version der App.
+{% enddocs %}
+
+{% docs app_install_store%}
+Store, aus dem die App installiert wurde.
+{% enddocs %}
+
+{% docs app_firebase_app_id%}
+Firebase App-ID.
+{% enddocs %}
+
+{% docs app_install_source%}
+Quelle der App-Installation.
+{% enddocs %}
+
+{% docs event_hostname%}
+Hostname des Ereignisses.
+{% enddocs %}
+
+{% docs total_item_quantity%}
+Gesamtanzahl der Artikel.
+{% enddocs %}
+
+{% docs purchase_revenue_in_usd%}
+Umsatz aus Käufen in USD.
+{% enddocs %}
+
+{% docs purchase_revenue%}
+Umsatz aus Käufen.
+{% enddocs %}
+
+{% docs refund_value_in_usd%}
+Wert der Rückerstattungen in USD.
+{% enddocs %}
+
+{% docs refund_value%}
+Wert der Rückerstattungen.
+{% enddocs %}
+
+{% docs shipping_value_in_usd%}
+Wert des Versands in USD.
+{% enddocs %}
+
+{% docs shipping_value%}
+Wert des Versands.
+{% enddocs %}
+
+{% docs tax_value_in_usd%}
+Wert der Steuern in USD.
+{% enddocs %}
+
+{% docs tax_value%}
+Wert der Steuern.
+{% enddocs %}
+
+{% docs unique_items%}
+Anzahl einzigartiger Artikel, die in einer Transaktion oder einem Ereignis enthalten sind.
+{% enddocs %}
+
+{% docs transaction_id%}
+Eindeutige Identifikationsnummer für eine Transaktion.
+{% enddocs %}
+
+{% docs item_id%}
+Eindeutige Identifikationsnummer eines Artikels in einer Transaktion oder einem Ereignis.
+{% enddocs %}
+
+{% docs item_name%}
+Name des Artikels.
+{% enddocs %}
+
+{% docs item_brand%}
+Marke des Artikels.
+{% enddocs %}
+
+{% docs item_variant%}
+Variante des Artikels, z.B. Größe oder Farbe.
+{% enddocs %}
+
+{% docs item_category%}
+Hauptkategorie, zu der der Artikel gehört.
+{% enddocs %}
+
+{% docs item_category2%}
+Unterkategorie unterhalb der Hauptkategorie für den Artikel.
+{% enddocs %}
+
+{% docs item_category3%}
+Dritte Ebene der Kategorisierung für den Artikel.
+{% enddocs %}
+
+{% docs item_category4%}
+Vierte Ebene der Kategorisierung für den Artikel.
+{% enddocs %}
+
+{% docs item_category5%}
+Fünfte Ebene der Kategorisierung für den Artikel.
+{% enddocs %}
+
+{% docs price_in_usd%}
+Preis des Artikels in US-Dollar.
+{% enddocs %}
+
+{% docs price%}
+Preis des Artikels in der lokalen Währung.
+{% enddocs %}
+
+{% docs quantity%}
+Anzahl der gekauften oder betroffenen Einheiten eines Artikels.
+{% enddocs %}
+
+{% docs item_revenue_in_usd%}
+Einnahmen aus dem Artikel in US-Dollar.
+{% enddocs %}
+
+{% docs item_revenue%}
+Einnahmen aus dem Artikel in der lokalen Währung.
+{% enddocs %}
+
+{% docs item_refund_in_usd%}
+Höhe der Rückerstattung für den Artikel in US-Dollar.
+{% enddocs %}
+
+{% docs item_refund%}
+Höhe der Rückerstattung für den Artikel in der lokalen Währung.
+{% enddocs %}
+
+{% docs coupon%}
+Coupon-Code, der bei der Transaktion verwendet wurde.
+{% enddocs %}
+
+{% docs affiliation%}
+Geschäft oder Ort der Transaktion, oft verwendet bei Affiliate-Marketing.
+{% enddocs %}
+
+{% docs location_id%}
+Standort-ID, z.B. eines Geschäfts oder einer Filiale.
+{% enddocs %}
+
+{% docs item_list_id%}
+Eindeutige Identifikationsnummer der Artikelgruppe oder -liste.
+{% enddocs %}
+
+{% docs item_list_name%}
+Name der Artikelgruppe oder -liste.
+{% enddocs %}
+
+{% docs item_list_index%}
+Position des Artikels in der Artikelgruppe oder -liste.
+{% enddocs %}
+
+{% docs promotion_id%}
+Eindeutige Identifikationsnummer einer Promotion oder eines Angebots.
+{% enddocs %}
+
+{% docs promotion_name%}
+Name der Promotion oder des Angebots.
+{% enddocs %}
+
+{% docs creative_name%}
+Name des kreativen Elements in einer Werbekampagne.
+{% enddocs %}
+
+{% docs creative_slot%}
+Platzierung oder Position des kreativen Elements auf einer Seite oder in einer Anzeige.
+{% enddocs %}
+
+{% docs manual_campaign_id%}
+Manuell eingestellte Identifikationsnummer für eine Kampagne.
+{% enddocs %}
+
+{% docs manual_campaign_name%}
+Manuell eingestellter Name für eine Kampagne.
+{% enddocs %}
+
+{% docs manual_source%}
+Manuelle UTM-Quellenbezeichnung.
+{% enddocs %}
+
+{% docs manual_medium%}
+Manuelle UTM-Medienbezeichnung.
+{% enddocs %}
+
+{% docs manual_term%}
+Manueller UTM-Term-Parameter.
+{% enddocs %}
+
+{% docs manual_content%}
+Manueller UTM-Content-Parameter.
+{% enddocs %}
+
+{% docs gclid%}
+Google Click Identifier, ein eindeutiger Tracking-Parameter, der von Google AdWords verwendet wird.
+{% enddocs %}
+
+{% docs dclid%}
+DoubleClick Click Identifier, ähnlich wie gclid, für Anzeigen, die über Google's DoubleClick ausgeliefert werden.
+{% enddocs %}
+
+{% docs srsltid%}
+Ein Identifikator, der vermutlich mit einer Suchanfrage oder einer Anzeigenschaltung verbunden ist.
 {% enddocs %}
 
 

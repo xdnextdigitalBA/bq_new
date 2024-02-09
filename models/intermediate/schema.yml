@@ -62,9 +62,9 @@ models:
       - name: Campaign
         description: '{{ doc("campaign_name") }}'
       - name: Source
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Source") }}'
       - name: Medium
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Medium") }}'
       - name: Partner
         description: '{{ doc("Partner") }}'
       - name: CampaignID
@@ -81,9 +81,9 @@ models:
       - name: Campaign
         description: '{{ doc("campaign_name") }}'
       - name: Source
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Source") }}'
       - name: Medium
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Medium") }}'
       - name: Partner
         description: '{{ doc("Partner") }}'
       - name: CampaignID
@@ -124,7 +124,7 @@ models:
       - name: campaign_status
         description: '{{ doc("campaign_status") }}'
       - name: Clicks
-        description: '{{ doc("Clicks") }}'
+        description: '{{ doc("clicks") }}'
       - name: conversions
         description: '{{ doc("conversions_camp") }}'
       - name: conversions_qualified
@@ -152,7 +152,7 @@ models:
       - name: historical_quality_score
         description: '{{ doc("historical_quality_score") }}'
       - name: Impressions
-        description: '{{ doc("Impressions") }}'
+        description: '{{ doc("impressions") }}'
       - name: landing_page_experience
         description: '{{ doc("landing_page_experience") }}'
       - name: low_quality_clicks
@@ -186,7 +186,7 @@ models:
       - name: revenue
         description: '{{ doc("revenue") }}'
       - name: Cost
-        description: '{{ doc("Cost") }}'
+        description: '{{ doc("cost") }}'
       - name: top_vs_other
         description: '{{ doc("top_vs_other") }}'
       - name: view_through_conversions

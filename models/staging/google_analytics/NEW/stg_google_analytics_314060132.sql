@@ -307,9 +307,9 @@ _merging AS(
 
 events_aggregated as (
   SELECT
+    event_id,
     event_date,
     event_ts,
-    event_id,
     session_id,
     user_pseudo_id,
     user_first_touch_ts,

@@ -111,9 +111,9 @@ models:
       - name: video_brand_safety_suitability
         description: '{{ doc("unused_columns") }}'
       - name: Source
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Source") }}'
       - name: Medium
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Medium") }}'
       - name: Partner
         description: '{{ doc("Partner") }}'
         test:
@@ -139,6 +139,152 @@ models:
         description: '{{ doc("campaignID") }}'
         test:
           - not_null
+      - name: account_id
+        description: '{{ doc("account_id") }}'
+      - name: modified_time
+        description: '{{ doc("modified_time") }}'
+      - name: bid_adjustment
+        description: '{{ doc("bid_adjustment") }}'
+      - name: bid_strategy_max_cpc
+        description: '{{ doc("bid_strategy_max_cpc") }}'
+      - name: bid_strategy_target_cpa
+        description: '{{ doc("bid_strategy_target_cpa") }}'
+      - name: bid_strategy_type
+        description: '{{ doc("bid_strategy_type") }}'
+      - name: budget
+        description: '{{ doc("budget") }}'
+      - name: budget_id
+        description: '{{ doc("budget_id") }}'
+      - name: country_code
+        description: '{{ doc("country_code") }}'
+      - name: domain_language
+        description: '{{ doc("domain_language") }}'
+      - name: language
+        description: '{{ doc("language") }}'
+      - name: local_inventory_ads_enabled
+        description: '{{ doc("local_inventory_ads_enabled") }}'
+      - name: name
+        description: '{{ doc("name") }}'
+      - name: priority
+        description: '{{ doc("priority") }}'
+      - name: status
+        description: '{{ doc("status") }}'
+      - name: store_id
+        description: '{{ doc("store_id") }}'
+      - name: sub_type
+        description: '{{ doc("sub_type") }}'
+      - name: time_zone
+        description: '{{ doc("time_zone") }}'
+      - name: tracking_template
+        description: '{{ doc("tracking_template") }}'
+      - name: type
+        description: '{{ doc("type") }}'
+      - name: website
+        description: '{{ doc("website") }}'
+
+  - name: stg_bing_ads_campaign_performance_daily_report
+    description: '{{ doc("campaign_stats") }}'
+    columns:
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+      - name: account_id
+        description: '{{ doc("account_id") }}'
+      - name: ad_distribution
+        description: '{{ doc("ad_distribution") }}'
+      - name: ad_relevance
+        description: '{{ doc("ad_relevance") }}'
+      - name: all_conversions
+        description: '{{ doc("all_conversions") }}'
+      - name: all_conversions_qualified
+        description: '{{ doc("all_conversions_qualified") }}'
+      - name: all_return_on_ad_spend
+        description: '{{ doc("all_return_on_ad_spend") }}'
+      - name: all_revenue
+        description: '{{ doc("all_revenue") }}'
+      - name: assists
+        description: '{{ doc("assists") }}'
+      - name: average_cpc
+        description: '{{ doc("average_cpc") }}'
+      - name: average_position
+        description: '{{ doc("average_position") }}'
+      - name: bid_match_type
+        description: '{{ doc("bid_match_type") }}'
+      - name: budget_association_status
+        description: '{{ doc("budget_association_status") }}'
+      - name: campaign_id
+        description: '{{ doc("campaign_id") }}'
+      - name: campaign_name
+        description: '{{ doc("campaign_name") }}'
+      - name: campaign_status
+        description: '{{ doc("campaign_status") }}'
+      - name: Clicks
+        description: '{{ doc("clicks") }}'
+      - name: conversions
+        description: '{{ doc("conversions") }}'
+      - name: conversions_qualified
+        description: '{{ doc("conversions_qualified") }}'
+      - name: ctr
+        description: '{{ doc("ctr") }}'
+      - name: currency_code
+        description: '{{ doc("currency_code") }}'
+      - name: Date
+        description: '{{ doc("Date") }}'
+      - name: delivered_match_type
+        description: '{{ doc("delivered_match_type") }}'
+      - name: device_os
+        description: '{{ doc("device_os") }}'
+      - name: device_type
+        description: '{{ doc("device_type") }}'
+      - name: expected_ctr
+        description: '{{ doc("expected_ctr") }}'
+      - name: historical_ad_relevance
+        description: '{{ doc("historical_ad_relevance") }}'
+      - name: historical_expected_ctr
+        description: '{{ doc("historical_expected_ctr") }}'
+      - name: historical_landing_page_experience
+        description: '{{ doc("historical_landing_page_experience") }}'
+      - name: historical_quality_score
+        description: '{{ doc("historical_quality_score") }}'
+      - name: Impressions
+        description: '{{ doc("impressions") }}'
+      - name: landing_page_experience
+        description: '{{ doc("landing_page_experience") }}'
+      - name: low_quality_clicks
+        description: '{{ doc("low_quality_clicks") }}'
+      - name: low_quality_clicks_percent
+        description: '{{ doc("low_quality_clicks_percent") }}'
+      - name: low_quality_conversion_rate
+        description: '{{ doc("low_quality_conversion_rate") }}'
+      - name: low_quality_conversions
+        description: '{{ doc("low_quality_conversions") }}'
+      - name: low_quality_conversions_qualified
+        description: '{{ doc("low_quality_conversions_qualified") }}'
+      - name: low_quality_general_clicks
+        description: '{{ doc("low_quality_general_clicks") }}'
+      - name: low_quality_impressions
+        description: '{{ doc("low_quality_impressions") }}'
+      - name: low_quality_impressions_percent
+        description: '{{ doc("low_quality_impressions_percent") }}'
+      - name: low_quality_sophisticated_clicks
+        description: '{{ doc("low_quality_sophisticated_clicks") }}'
+      - name: network
+        description: '{{ doc("network") }}'
+      - name: phone_calls
+        description: '{{ doc("phone_calls") }}'
+      - name: phone_impressions
+        description: '{{ doc("phone_impressions") }}'
+      - name: quality_score
+        description: '{{ doc("quality_score") }}'
+      - name: return_on_ad_spend
+        description: '{{ doc("return_on_ad_spend") }}'
+      - name: revenue
+        description: '{{ doc("revenue") }}'
+      - name: Cost
+        description: '{{ doc("cost") }}'
+      - name: top_vs_other
+        description: '{{ doc("top_vs_other") }}'
+      - name: view_through_conversions
+        description: '{{ doc("view_through_conversions") }}'
 
 #Google Analytics
   - name: stg_google_analytics_314060132
@@ -147,21 +293,198 @@ models:
       Bereinigt fehlerhafte Events ohne Session-ID. 
       Offzielle Doku Google: https://support.google.com/analytics/answer/7029846?hl=en#zippy=
     columns:
+      - name: device_os
+        description: '{{ doc("device_os") }}'
+      - name: event_id
+        description: '{{ doc("event_id") }}'
+      - name: event_date
+        description: '{{ doc("event_date") }}'
+      - name: event_ts
+        description: '{{ doc("event_ts") }}'
+      - name: session_id
+        description: '{{ doc("session_id") }}'
+      - name: user_pseudo_id
+        description: '{{ doc("user_pseudo_id") }}'
+      - name: user_first_touch_ts
+        description: '{{ doc("user_first_touch_ts") }}'
+      - name: event_name
+        description: '{{ doc("event_name") }}'
+      - name: utm_campaign
+        description: '{{ doc("utm_campaign") }}'
+      - name: utm_medium
+        description: '{{ doc("utm_medium") }}'
+      - name: utm_source
+        description: '{{ doc("utm_source") }}'
+      - name: page_title
+        description: '{{ doc("page_title") }}'
+      - name: page_location
+        description: '{{ doc("page_location") }}'
+      - name: page_referrer
+        description: '{{ doc("page_referrer") }}'
+      - name: page_path
+        description: '{{ doc("page_path") }}'
+      - name: percent_scrolled
+        description: '{{ doc("percent_scrolled") }}'
+      - name: session_engaged
+        description: '{{ doc("session_engaged") }}'
+      - name: analytics_storage
+        description: '{{ doc("analytics_storage") }}'
+      - name: ads_storage
+        description: '{{ doc("ads_storage") }}'
+      - name: uses_transient_token
+        description: '{{ doc("uses_transient_token") }}'
       - name: ltv_revenue
-        description: User Lifetime Value
+        description: '{{ doc("ltv_revenue") }}'
       - name: ltv_currency
-        description: Einheit des User Lifetime Value
-
-  - name: stg_google_analytics_345727078
-    description: >
-      Enthält alle GA4-Events in Tabellenform ohne Schachtelung. 
-      Bereinigt fehlerhafte Events ohne Session-ID. 
-      Offzielle Doku Google: https://support.google.com/analytics/answer/7029846?hl=en#zippy=
-    columns:
-      - name: ltv_revenue
-        description: User Lifetime Value
-      - name: ltv_currency
-        description: Einheit des User Lifetime Value
+        description: '{{ doc("ltv_currency") }}'
+      - name: device_category
+        description: '{{ doc("device_category") }}'
+      - name: device_brand
+        description: '{{ doc("device_brand") }}'
+      - name: device_model_name
+        description: '{{ doc("device_model_name") }}'
+      - name: device_marketing_name
+        description: '{{ doc("device_marketing_name") }}'
+      - name: device_mobile_os_hardware_model
+        description: '{{ doc("device_mobile_os_hardware_model") }}'
+      - name: device_os_version
+        description: '{{ doc("device_os_version") }}'
+      - name: device_vendor_id
+        description: '{{ doc("device_vendor_id") }}'
+      - name: device_advertising_id
+        description: '{{ doc("device_advertising_id") }}'
+      - name: device_language
+        description: '{{ doc("device_language") }}'
+      - name: device_is_limited_ad_tracking
+        description: '{{ doc("device_is_limited_ad_tracking") }}'
+      - name: device_time_zone_offset_seconds
+        description: '{{ doc("device_time_zone_offset_seconds") }}'
+      - name: device_browser
+        description: '{{ doc("device_browser") }}'
+      - name: device_browser_version
+        description: '{{ doc("device_browser_version") }}'
+      - name: device_web_info_browser
+        description: '{{ doc("device_web_info_browser") }}'
+      - name: device_web_info_browser_version
+        description: '{{ doc("device_web_info_browser_version") }}'
+      - name: browser_web_info_hostname
+        description: '{{ doc("browser_web_info_hostname") }}'
+      - name: continent
+        description: '{{ doc("continent") }}'
+      - name: country
+        description: '{{ doc("country") }}'
+      - name: region
+        description: '{{ doc("region") }}'
+      - name: city
+        description: '{{ doc("city") }}'
+      - name: sub_continent
+        description: '{{ doc("sub_continent") }}'
+      - name: metropolitan_area
+        description: '{{ doc("metropolitan_area") }}'
+      - name: app_id
+        description: '{{ doc("app_id") }}'
+      - name: app_version
+        description: '{{ doc("app_version") }}'
+      - name: app_install_store
+        description: '{{ doc("app_install_store") }}'
+      - name: app_firebase_app_id
+        description: '{{ doc("app_firebase_app_id") }}'
+      - name: app_install_source
+        description: '{{ doc("app_install_source") }}'
+      - name: event_hostname
+        description: '{{ doc("event_hostname") }}'
+      - name: total_item_quantity
+        description: '{{ doc("total_item_quantity") }}'
+      - name: purchase_revenue_in_usd
+        description: '{{ doc("purchase_revenue_in_usd") }}'
+      - name: purchase_revenue
+        description: '{{ doc("purchase_revenue") }}'
+      - name: refund_value_in_usd
+        description: '{{ doc("refund_value_in_usd") }}'
+      - name: refund_value
+        description: '{{ doc("refund_value") }}'
+      - name: shipping_value_in_usd
+        description: '{{ doc("shipping_value_in_usd") }}'
+      - name: shipping_value
+        description: '{{ doc("shipping_value") }}'
+      - name: tax_value_in_usd
+        description: '{{ doc("tax_value_in_usd") }}'
+      - name: tax_value
+        description: '{{ doc("tax_value") }}'
+      - name: unique_items
+        description: '{{ doc("unique_items") }}'
+      - name: transaction_id
+        description: '{{ doc("transaction_id") }}'
+      - name: item_id
+        description: '{{ doc("item_id") }}'
+      - name: item_name
+        description: '{{ doc("item_name") }}'
+      - name: item_brand
+        description: '{{ doc("item_brand") }}'
+      - name: item_variant
+        description: '{{ doc("item_variant") }}'
+      - name: item_category
+        description: '{{ doc("item_category") }}'
+      - name: item_category2
+        description: '{{ doc("item_category2") }}'
+      - name: item_category3
+        description: '{{ doc("item_category3") }}'
+      - name: item_category4
+        description: '{{ doc("item_category4") }}'
+      - name: item_category5
+        description: '{{ doc("item_category5") }}'
+      - name: price_in_usd
+        description: '{{ doc("price_in_usd") }}'
+      - name: price
+        description: '{{ doc("price") }}'
+      - name: quantity
+        description: '{{ doc("quantity") }}'
+      - name: item_revenue_in_usd
+        description: '{{ doc("item_revenue_in_usd") }}'
+      - name: item_revenue
+        description: '{{ doc("item_revenue") }}'
+      - name: item_refund_in_usd
+        description: '{{ doc("item_refund_in_usd") }}'
+      - name: item_refund
+        description: '{{ doc("item_refund") }}'
+      - name: coupon
+        description: '{{ doc("coupon") }}'
+      - name: affiliation
+        description: '{{ doc("affiliation") }}'
+      - name: location_id
+        description: '{{ doc("location_id") }}'
+      - name: item_list_id
+        description: '{{ doc("item_list_id") }}'
+      - name: item_list_name
+        description: '{{ doc("item_list_name") }}'
+      - name: item_list_index
+        description: '{{ doc("item_list_index") }}'
+      - name: promotion_id
+        description: '{{ doc("promotion_id") }}'
+      - name: promotion_name
+        description: '{{ doc("promotion_name") }}'
+      - name: creative_name
+        description: '{{ doc("creative_name") }}'
+      - name: creative_slot
+        description: '{{ doc("creative_slot") }}'
+      - name: manual_campaign_id
+        description: '{{ doc("manual_campaign_id") }}'
+      - name: manual_campaign_name
+        description: '{{ doc("manual_campaign_name") }}'
+      - name: manual_source
+        description: '{{ doc("manual_source") }}'
+      - name: manual_medium
+        description: '{{ doc("manual_medium") }}'
+      - name: manual_term
+        description: '{{ doc("manual_term") }}'
+      - name: manual_content
+        description: '{{ doc("manual_content") }}'
+      - name: gclid
+        description: '{{ doc("gclid") }}'
+      - name: dclid
+        description: '{{ doc("dclid") }}'
+      - name: srsltid
+        description: '{{ doc("srsltid") }}'
 
   - name: stg_google_analytics_historic_campaigns_new
     description: Enthält alle historischen Kampagnen aus Universal Analytics / GA3
@@ -171,11 +494,472 @@ models:
       - name: Partner
         description: '{{ doc("Partner") }}'
       - name: Source
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Source") }}'
       - name: Medium
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Medium") }}'
       - name: CampaignID
         description: '{{ doc("campaignID") }}'
+
+  - name: stg_google_analytics_345727078
+    description: >
+      Enthält alle GA4-Events in Tabellenform ohne Schachtelung. 
+      Bereinigt fehlerhafte Events ohne Session-ID. 
+      Offzielle Doku Google: https://support.google.com/analytics/answer/7029846?hl=en#zippy=
+    columns:
+      - name: device_os
+        description: '{{ doc("device_os") }}'
+      - name: event_id
+        description: '{{ doc("event_id") }}'
+      - name: event_date
+        description: '{{ doc("event_date") }}'
+      - name: event_ts
+        description: '{{ doc("event_ts") }}'
+      - name: session_id
+        description: '{{ doc("session_id") }}'
+      - name: user_pseudo_id
+        description: '{{ doc("user_pseudo_id") }}'
+      - name: user_first_touch_ts
+        description: '{{ doc("user_first_touch_ts") }}'
+      - name: event_name
+        description: '{{ doc("event_name") }}'
+      - name: utm_campaign
+        description: '{{ doc("utm_campaign") }}'
+      - name: utm_medium
+        description: '{{ doc("utm_medium") }}'
+      - name: utm_source
+        description: '{{ doc("utm_source") }}'
+      - name: page_title
+        description: '{{ doc("page_title") }}'
+      - name: page_location
+        description: '{{ doc("page_location") }}'
+      - name: page_referrer
+        description: '{{ doc("page_referrer") }}'
+      - name: page_path
+        description: '{{ doc("page_path") }}'
+      - name: percent_scrolled
+        description: '{{ doc("percent_scrolled") }}'
+      - name: session_engaged
+        description: '{{ doc("session_engaged") }}'
+      - name: analytics_storage
+        description: '{{ doc("analytics_storage") }}'
+      - name: ads_storage
+        description: '{{ doc("ads_storage") }}'
+      - name: uses_transient_token
+        description: '{{ doc("uses_transient_token") }}'
+      - name: ltv_revenue
+        description: '{{ doc("ltv_revenue") }}'
+      - name: ltv_currency
+        description: '{{ doc("ltv_currency") }}'
+      - name: device_category
+        description: '{{ doc("device_category") }}'
+      - name: device_brand
+        description: '{{ doc("device_brand") }}'
+      - name: device_model_name
+        description: '{{ doc("device_model_name") }}'
+      - name: device_marketing_name
+        description: '{{ doc("device_marketing_name") }}'
+      - name: device_mobile_os_hardware_model
+        description: '{{ doc("device_mobile_os_hardware_model") }}'
+      - name: device_os_version
+        description: '{{ doc("device_os_version") }}'
+      - name: device_vendor_id
+        description: '{{ doc("device_vendor_id") }}'
+      - name: device_advertising_id
+        description: '{{ doc("device_advertising_id") }}'
+      - name: device_language
+        description: '{{ doc("device_language") }}'
+      - name: device_is_limited_ad_tracking
+        description: '{{ doc("device_is_limited_ad_tracking") }}'
+      - name: device_time_zone_offset_seconds
+        description: '{{ doc("device_time_zone_offset_seconds") }}'
+      - name: device_browser
+        description: '{{ doc("device_browser") }}'
+      - name: device_browser_version
+        description: '{{ doc("device_browser_version") }}'
+      - name: device_web_info_browser
+        description: '{{ doc("device_web_info_browser") }}'
+      - name: device_web_info_browser_version
+        description: '{{ doc("device_web_info_browser_version") }}'
+      - name: browser_web_info_hostname
+        description: '{{ doc("browser_web_info_hostname") }}'
+      - name: continent
+        description: '{{ doc("continent") }}'
+      - name: country
+        description: '{{ doc("country") }}'
+      - name: region
+        description: '{{ doc("region") }}'
+      - name: city
+        description: '{{ doc("city") }}'
+      - name: sub_continent
+        description: '{{ doc("sub_continent") }}'
+      - name: metropolitan_area
+        description: '{{ doc("metropolitan_area") }}'
+      - name: app_id
+        description: '{{ doc("app_id") }}'
+      - name: app_version
+        description: '{{ doc("app_version") }}'
+      - name: app_install_store
+        description: '{{ doc("app_install_store") }}'
+      - name: app_firebase_app_id
+        description: '{{ doc("app_firebase_app_id") }}'
+      - name: app_install_source
+        description: '{{ doc("app_install_source") }}'
+      - name: event_hostname
+        description: '{{ doc("event_hostname") }}'
+      - name: total_item_quantity
+        description: '{{ doc("total_item_quantity") }}'
+      - name: purchase_revenue_in_usd
+        description: '{{ doc("purchase_revenue_in_usd") }}'
+      - name: purchase_revenue
+        description: '{{ doc("purchase_revenue") }}'
+      - name: refund_value_in_usd
+        description: '{{ doc("refund_value_in_usd") }}'
+      - name: refund_value
+        description: '{{ doc("refund_value") }}'
+      - name: shipping_value_in_usd
+        description: '{{ doc("shipping_value_in_usd") }}'
+      - name: shipping_value
+        description: '{{ doc("shipping_value") }}'
+      - name: tax_value_in_usd
+        description: '{{ doc("tax_value_in_usd") }}'
+      - name: tax_value
+        description: '{{ doc("tax_value") }}'
+      - name: unique_items
+        description: '{{ doc("unique_items") }}'
+      - name: transaction_id
+        description: '{{ doc("transaction_id") }}'
+      - name: item_id
+        description: '{{ doc("item_id") }}'
+      - name: item_name
+        description: '{{ doc("item_name") }}'
+      - name: item_brand
+        description: '{{ doc("item_brand") }}'
+      - name: item_variant
+        description: '{{ doc("item_variant") }}'
+      - name: item_category
+        description: '{{ doc("item_category") }}'
+      - name: item_category2
+        description: '{{ doc("item_category2") }}'
+      - name: item_category3
+        description: '{{ doc("item_category3") }}'
+      - name: item_category4
+        description: '{{ doc("item_category4") }}'
+      - name: item_category5
+        description: '{{ doc("item_category5") }}'
+      - name: price_in_usd
+        description: '{{ doc("price_in_usd") }}'
+      - name: price
+        description: '{{ doc("price") }}'
+      - name: quantity
+        description: '{{ doc("quantity") }}'
+      - name: item_revenue_in_usd
+        description: '{{ doc("item_revenue_in_usd") }}'
+      - name: item_revenue
+        description: '{{ doc("item_revenue") }}'
+      - name: item_refund_in_usd
+        description: '{{ doc("item_refund_in_usd") }}'
+      - name: item_refund
+        description: '{{ doc("item_refund") }}'
+      - name: coupon
+        description: '{{ doc("coupon") }}'
+      - name: affiliation
+        description: '{{ doc("affiliation") }}'
+      - name: location_id
+        description: '{{ doc("location_id") }}'
+      - name: item_list_id
+        description: '{{ doc("item_list_id") }}'
+      - name: item_list_name
+        description: '{{ doc("item_list_name") }}'
+      - name: item_list_index
+        description: '{{ doc("item_list_index") }}'
+      - name: promotion_id
+        description: '{{ doc("promotion_id") }}'
+      - name: promotion_name
+        description: '{{ doc("promotion_name") }}'
+      - name: creative_name
+        description: '{{ doc("creative_name") }}'
+      - name: creative_slot
+        description: '{{ doc("creative_slot") }}'
+      - name: manual_campaign_id
+        description: '{{ doc("manual_campaign_id") }}'
+      - name: manual_campaign_name
+        description: '{{ doc("manual_campaign_name") }}'
+      - name: manual_source
+        description: '{{ doc("manual_source") }}'
+      - name: manual_medium
+        description: '{{ doc("manual_medium") }}'
+      - name: manual_term
+        description: '{{ doc("manual_term") }}'
+      - name: manual_content
+        description: '{{ doc("manual_content") }}'
+      - name: gclid
+        description: '{{ doc("gclid") }}'
+      - name: dclid
+        description: '{{ doc("dclid") }}'
+      - name: srsltid
+        description: '{{ doc("srsltid") }}'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  - name: stg_google_analytics_historic_campaigns_new
+    description: Enthält alle historischen Kampagnen aus Universal Analytics / GA3
+    columns:
+      - name: Campaign
+        description: '{{ doc("campaign_name") }}'
+      - name: Partner
+        description: '{{ doc("Partner") }}'
+      - name: Source
+        description: '{{ doc("Source") }}'
+      - name: Medium
+        description: '{{ doc("Medium") }}'
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+
+  - name: stg_google_analytics_283762334
+    description: >
+      Enthält alle GA4-Events in Tabellenform ohne Schachtelung. 
+      Bereinigt fehlerhafte Events ohne Session-ID. 
+      Offzielle Doku Google: https://support.google.com/analytics/answer/7029846?hl=en#zippy=
+    columns:
+      - name: device_os
+        description: '{{ doc("device_os") }}'
+      - name: event_id
+        description: '{{ doc("event_id") }}'
+      - name: event_date
+        description: '{{ doc("event_date") }}'
+      - name: event_ts
+        description: '{{ doc("event_ts") }}'
+      - name: session_id
+        description: '{{ doc("session_id") }}'
+      - name: user_pseudo_id
+        description: '{{ doc("user_pseudo_id") }}'
+      - name: user_first_touch_ts
+        description: '{{ doc("user_first_touch_ts") }}'
+      - name: event_name
+        description: '{{ doc("event_name") }}'
+      - name: utm_campaign
+        description: '{{ doc("utm_campaign") }}'
+      - name: utm_medium
+        description: '{{ doc("utm_medium") }}'
+      - name: utm_source
+        description: '{{ doc("utm_source") }}'
+      - name: page_title
+        description: '{{ doc("page_title") }}'
+      - name: page_location
+        description: '{{ doc("page_location") }}'
+      - name: page_referrer
+        description: '{{ doc("page_referrer") }}'
+      - name: page_path
+        description: '{{ doc("page_path") }}'
+      - name: percent_scrolled
+        description: '{{ doc("percent_scrolled") }}'
+      - name: session_engaged
+        description: '{{ doc("session_engaged") }}'
+      - name: analytics_storage
+        description: '{{ doc("analytics_storage") }}'
+      - name: ads_storage
+        description: '{{ doc("ads_storage") }}'
+      - name: uses_transient_token
+        description: '{{ doc("uses_transient_token") }}'
+      - name: ltv_revenue
+        description: '{{ doc("ltv_revenue") }}'
+      - name: ltv_currency
+        description: '{{ doc("ltv_currency") }}'
+      - name: device_category
+        description: '{{ doc("device_category") }}'
+      - name: device_brand
+        description: '{{ doc("device_brand") }}'
+      - name: device_model_name
+        description: '{{ doc("device_model_name") }}'
+      - name: device_marketing_name
+        description: '{{ doc("device_marketing_name") }}'
+      - name: device_mobile_os_hardware_model
+        description: '{{ doc("device_mobile_os_hardware_model") }}'
+      - name: device_os_version
+        description: '{{ doc("device_os_version") }}'
+      - name: device_vendor_id
+        description: '{{ doc("device_vendor_id") }}'
+      - name: device_advertising_id
+        description: '{{ doc("device_advertising_id") }}'
+      - name: device_language
+        description: '{{ doc("device_language") }}'
+      - name: device_is_limited_ad_tracking
+        description: '{{ doc("device_is_limited_ad_tracking") }}'
+      - name: device_time_zone_offset_seconds
+        description: '{{ doc("device_time_zone_offset_seconds") }}'
+      - name: device_browser
+        description: '{{ doc("device_browser") }}'
+      - name: device_browser_version
+        description: '{{ doc("device_browser_version") }}'
+      - name: device_web_info_browser
+        description: '{{ doc("device_web_info_browser") }}'
+      - name: device_web_info_browser_version
+        description: '{{ doc("device_web_info_browser_version") }}'
+      - name: browser_web_info_hostname
+        description: '{{ doc("browser_web_info_hostname") }}'
+      - name: continent
+        description: '{{ doc("continent") }}'
+      - name: country
+        description: '{{ doc("country") }}'
+      - name: region
+        description: '{{ doc("region") }}'
+      - name: city
+        description: '{{ doc("city") }}'
+      - name: sub_continent
+        description: '{{ doc("sub_continent") }}'
+      - name: metropolitan_area
+        description: '{{ doc("metropolitan_area") }}'
+      - name: app_id
+        description: '{{ doc("app_id") }}'
+      - name: app_version
+        description: '{{ doc("app_version") }}'
+      - name: app_install_store
+        description: '{{ doc("app_install_store") }}'
+      - name: app_firebase_app_id
+        description: '{{ doc("app_firebase_app_id") }}'
+      - name: app_install_source
+        description: '{{ doc("app_install_source") }}'
+      - name: event_hostname
+        description: '{{ doc("event_hostname") }}'
+      - name: total_item_quantity
+        description: '{{ doc("total_item_quantity") }}'
+      - name: purchase_revenue_in_usd
+        description: '{{ doc("purchase_revenue_in_usd") }}'
+      - name: purchase_revenue
+        description: '{{ doc("purchase_revenue") }}'
+      - name: refund_value_in_usd
+        description: '{{ doc("refund_value_in_usd") }}'
+      - name: refund_value
+        description: '{{ doc("refund_value") }}'
+      - name: shipping_value_in_usd
+        description: '{{ doc("shipping_value_in_usd") }}'
+      - name: shipping_value
+        description: '{{ doc("shipping_value") }}'
+      - name: tax_value_in_usd
+        description: '{{ doc("tax_value_in_usd") }}'
+      - name: tax_value
+        description: '{{ doc("tax_value") }}'
+      - name: unique_items
+        description: '{{ doc("unique_items") }}'
+      - name: transaction_id
+        description: '{{ doc("transaction_id") }}'
+      - name: item_id
+        description: '{{ doc("item_id") }}'
+      - name: item_name
+        description: '{{ doc("item_name") }}'
+      - name: item_brand
+        description: '{{ doc("item_brand") }}'
+      - name: item_variant
+        description: '{{ doc("item_variant") }}'
+      - name: item_category
+        description: '{{ doc("item_category") }}'
+      - name: item_category2
+        description: '{{ doc("item_category2") }}'
+      - name: item_category3
+        description: '{{ doc("item_category3") }}'
+      - name: item_category4
+        description: '{{ doc("item_category4") }}'
+      - name: item_category5
+        description: '{{ doc("item_category5") }}'
+      - name: price_in_usd
+        description: '{{ doc("price_in_usd") }}'
+      - name: price
+        description: '{{ doc("price") }}'
+      - name: quantity
+        description: '{{ doc("quantity") }}'
+      - name: item_revenue_in_usd
+        description: '{{ doc("item_revenue_in_usd") }}'
+      - name: item_revenue
+        description: '{{ doc("item_revenue") }}'
+      - name: item_refund_in_usd
+        description: '{{ doc("item_refund_in_usd") }}'
+      - name: item_refund
+        description: '{{ doc("item_refund") }}'
+      - name: coupon
+        description: '{{ doc("coupon") }}'
+      - name: affiliation
+        description: '{{ doc("affiliation") }}'
+      - name: location_id
+        description: '{{ doc("location_id") }}'
+      - name: item_list_id
+        description: '{{ doc("item_list_id") }}'
+      - name: item_list_name
+        description: '{{ doc("item_list_name") }}'
+      - name: item_list_index
+        description: '{{ doc("item_list_index") }}'
+      - name: promotion_id
+        description: '{{ doc("promotion_id") }}'
+      - name: promotion_name
+        description: '{{ doc("promotion_name") }}'
+      - name: creative_name
+        description: '{{ doc("creative_name") }}'
+      - name: creative_slot
+        description: '{{ doc("creative_slot") }}'
+      - name: manual_campaign_id
+        description: '{{ doc("manual_campaign_id") }}'
+      - name: manual_campaign_name
+        description: '{{ doc("manual_campaign_name") }}'
+      - name: manual_source
+        description: '{{ doc("manual_source") }}'
+      - name: manual_medium
+        description: '{{ doc("manual_medium") }}'
+      - name: manual_term
+        description: '{{ doc("manual_term") }}'
+      - name: manual_content
+        description: '{{ doc("manual_content") }}'
+      - name: gclid
+        description: '{{ doc("gclid") }}'
+      - name: dclid
+        description: '{{ doc("dclid") }}'
+      - name: srsltid
+        description: '{{ doc("srsltid") }}'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  - name: stg_google_analytics_historic_campaigns_new
+    description: Enthält alle historischen Kampagnen aus Universal Analytics / GA3
+    columns:
+      - name: Campaign
+        description: '{{ doc("campaign_name") }}'
+      - name: Partner
+        description: '{{ doc("Partner") }}'
+      - name: Source
+        description: '{{ doc("Source") }}'
+      - name: Medium
+        description: '{{ doc("Medium") }}'
+      - name: CampaignID
+        description: '{{ doc("campaignID") }}'
+      
+
+
+
+
+
+
+
+
 
   - name: stg_google_analytics_historic_campaigns_ke
     description: Enthält alle historischen Kampagnen aus Universal Analytics / GA3
@@ -185,9 +969,9 @@ models:
       - name: Partner
         description: '{{ doc("Partner") }}'
       - name: Source
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Source") }}'
       - name: Medium
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Medium") }}'
       - name: CampaignID
         description: '{{ doc("campaignID") }}'
 
@@ -199,9 +983,9 @@ models:
       - name: Campaign
         description: '{{ doc("campaign_name") }}'
       - name: Medium
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Source") }}'
       - name: Source
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Medium") }}'
       - name: ProductCategory
         description: '{{ doc("productcategory") }}'
       - name: Transactions
@@ -223,9 +1007,9 @@ models:
       - name: Campaign
         description: '{{ doc("campaign_name") }}'
       - name: Medium
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Medium") }}'
       - name: Source
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Source") }}'
       - name: ProductCategory
         description: '{{ doc("productcategory") }}'
       - name: Transactions
@@ -247,9 +1031,9 @@ models:
       - name: Campaign
         description: '{{ doc("campaign_name") }}'
       - name: Medium
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Source") }}'
       - name: Source
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Medium") }}'
       - name: Keyword
         description: '{{ doc("keyword") }}'
       - name: KeywordMatchType
@@ -271,9 +1055,9 @@ models:
       - name: Campaign
         description: '{{ doc("campaign_name") }}'
       - name: Medium
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Medium") }}'
       - name: Source
-        description: '{{ doc("source_medium_manual") }}'
+        description: '{{ doc("Source") }}'
       - name: Keyword
         description: '{{ doc("keyword") }}'
       - name: KeywordMatchType
