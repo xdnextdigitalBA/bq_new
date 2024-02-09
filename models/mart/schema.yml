@@ -13,6 +13,26 @@ models:
         description: '{{ doc("keyword") }}'
       - name: KeywordMatchType
         description: '{{ doc("KeywordMatchType") }}'
+      - name: Date
+        description: '{{ doc("Date") }}'
+      - name: Campaign
+        description: '{{ doc("campaign_name") }}'
+      - name: Source
+        description: '{{ doc("Source") }}'
+      - name: Medium
+        description: '{{ doc("Medium") }}'
+      - name: Partner
+        description: '{{ doc("Partner") }}'
+      - name: Impressions
+        description: '{{ doc("impressions") }}'
+      - name: Clicks
+        description: '{{ doc("clicks") }}'
+      - name: Cost
+        description: '{{ doc("cost") }}'
+
+
+
+
 #Bing Ads
   - name: mrt_bing_ads_basic_campaign_stats
     description: '{{ doc("performancereporting_stats") }}'
@@ -25,6 +45,26 @@ models:
         description: '{{ doc("keyword") }}'
       - name: KeywordMatchType
         description: '{{ doc("KeywordMatchType") }}'
+      - name: Date
+        description: '{{ doc("Date") }}'
+      - name: Campaign
+        description: '{{ doc("campaign_name") }}'
+      - name: Source
+        description: '{{ doc("Source") }}'
+      - name: Medium
+        description: '{{ doc("Medium") }}'
+      - name: Partner
+        description: '{{ doc("Partner") }}'
+      - name: Impressions
+        description: '{{ doc("impressions") }}'
+      - name: Clicks
+        description: '{{ doc("clicks") }}'
+      - name: Cost
+        description: '{{ doc("cost") }}'
+
+
+
+
 #Google Analytics
   - name: mrt_google_analytics_campaign_webperformance
     description: Enthält grundlegende Web-Performancewerte aller über GA4 erfassten Kampagnen.
@@ -33,6 +73,28 @@ models:
         description: '{{ doc("campaignID") }}'
         tests:
           - not_null
+      - name: Date
+        description: '{{ doc("Date") }}'
+      - name: Medium
+        description: '{{ doc("Medium") }}'
+      - name: Source
+        description: '{{ doc("Source") }}'
+      - name: Partner
+        description: '{{ doc("Partner") }}'
+      - name: Keyword
+        description: '{{ doc("keyword") }}'
+      - name: KeywordMatchType
+        description: '{{ doc("KeywordMatchType") }}'
+      - name: Sessions
+        description: '{{ doc("Sessions") }}'
+      - name: Sessions_Engaged
+        description: '{{ doc("Sessions_Engaged") }}'
+      - name: Engagement_Rate
+        description: '{{ doc("Engagement_Rate") }}'
+
+
+
+
   - name: mrt_google_analytics_NDG_merged_ua_ga4_conversions_summarized
     description: |
       Enthält alle Conversiondaten bis einschl. 11.06.2023 aus Unisversal Analytics, alle Conversions ab 11.06.2023 aus Google Analytics 4.
@@ -43,6 +105,24 @@ models:
         description: '{{ doc("keyword") }}'
       - name: KeywordMatchType
         description: '{{ doc("KeywordMatchType") }}'
+      - name: Date
+        description: '{{ doc("Date") }}'
+      - name: ZielvorhabenName
+        description: '{{ doc("ZielvorhabenName") }}'
+      - name: ZielvorhabenID
+        description: '{{ doc("ZielvorhabenID") }}'
+      - name: Source
+        description: '{{ doc("Source") }}'
+      - name: Medium
+        description: '{{ doc("Medium") }}'
+      - name: Partner
+        description: '{{ doc("Partner") }}'
+      - name: Conversions
+        description: '{{ doc("conversions") }}'
+
+
+
+
   - name: mrt_google_analytics_merged_ua_ga4_transactions_summarized
     description: Enthält alle aggregierten Transaktionen bis einschl. 04.06.2023 (NEW) bzw. 26.06.2023 (KE) aus Universal Analytics, alle späteren Transaktionen stammen aus GA4. Enthält keine Detailinformationen je Transaktion.
     columns:
@@ -52,6 +132,27 @@ models:
         description: '{{ doc("keyword") }}'
       - name: KeywordMatchType
         description: '{{ doc("KeywordMatchType") }}'
+      - name: Date
+        description: '{{ doc("Date") }}'
+      - name: Campaign
+        description: '{{ doc("campaign_name") }}'
+      - name: Medium
+        description: '{{ doc("Medium") }}'
+      - name: Source
+        description: '{{ doc("Source") }}'
+      - name: ProductCategory
+        description: '{{ doc("productcategory") }}'
+      - name: Transactions
+        description: '{{ doc("transactions") }}'
+      - name: Partner
+        description: '{{ doc("Partner") }}'
+      - name: Keyword
+        description: '{{ doc("keyword") }}'
+      - name: KeywordMatchType
+        description: '{{ doc("KeywordMatchType") }}'
+
+
+
 
 #Multi-Source_Models
   - name: mrt_metainformation_campaigns
@@ -63,3 +164,11 @@ models:
           - not_null 
       - name: IsPaid
         description: true = bezahlte Kampagne 
+      - name: Partner
+        description: '{{ doc("Partner") }}'
+      - name: Campaign
+        description: '{{ doc("campaign_name") }}'
+      - name: Medium
+        description: '{{ doc("Medium") }}'
+      - name: Source
+        description: '{{ doc("Source") }}'

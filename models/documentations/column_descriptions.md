@@ -796,6 +796,16 @@ Vorherige Bezeichnung = event_name
 Standard Kanalgruppierung gemäß GA4.
 {% enddocs %}
 
+{% docs Sessions%}
+Die Anzahl der einzelnen Sitzungen, die von Nutzern auf Ihrer Website oder App initiiert wurden. Eine Session umfasst alle Aktivitäten, die ein Nutzer während des Besuchs ausführt, und dauert bis zu einer Inaktivität, die oft standardmäßig nach 30 Minuten endet.
+{% enddocs %}
 
+{% docs Sessions_Engaged%}
+Die Anzahl der Sitzungen, bei denen die Nutzer interagiert haben.
+{% enddocs %}
+
+{% docs Engagement_Rate%}
+Interaktionsrate der Sitzungen.
+{% enddocs %}
 
 
