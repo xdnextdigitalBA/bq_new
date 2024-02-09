@@ -784,6 +784,17 @@ DoubleClick Click Identifier, ähnlich wie gclid, für Anzeigen, die über Googl
 Ein Identifikator, der vermutlich mit einer Suchanfrage oder einer Anzeigenschaltung verbunden ist.
 {% enddocs %}
 
+{% docs ZielvorhabenID%}
+Relevante ID für das Reporting von Next Digital.
+{% enddocs %}
+
+{% docs ZielvorhabenName%}
+Vorherige Bezeichnung = event_name
+{% enddocs %}
+
+{% docs default_channel_grouping%}
+Standard Kanalgruppierung gemäß GA4.
+{% enddocs %}
 
 
 
