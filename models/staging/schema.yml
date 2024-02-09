@@ -486,20 +486,6 @@ models:
       - name: srsltid
         description: '{{ doc("srsltid") }}'
 
-  - name: stg_google_analytics_historic_campaigns_new
-    description: Enthält alle historischen Kampagnen aus Universal Analytics / GA3
-    columns:
-      - name: Campaign
-        description: '{{ doc("campaign_name") }}'
-      - name: Partner
-        description: '{{ doc("Partner") }}'
-      - name: Source
-        description: '{{ doc("Source") }}'
-      - name: Medium
-        description: '{{ doc("Medium") }}'
-      - name: CampaignID
-        description: '{{ doc("campaignID") }}'
-
   - name: stg_google_analytics_345727078
     description: >
       Enthält alle GA4-Events in Tabellenform ohne Schachtelung. 
