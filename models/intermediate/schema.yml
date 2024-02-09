@@ -77,7 +77,7 @@ models:
     description: '{{ doc("campaign_stats") }}'
     columns:
       - name: id
-        description: '{{ doc("werbepartner_campaign_id") }}'
+        description: '{{ doc("id") }}'
       - name: Campaign
         description: '{{ doc("campaign_name") }}'
       - name: Source
