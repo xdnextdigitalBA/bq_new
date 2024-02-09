@@ -16,12 +16,12 @@
 WITH _source AS(
   SELECT
     -- generate surrogate 'event' ID
-        {{ dbt_utils.generate_surrogate_key([
-           'event_timestamp',
-           'event_name',
-           'user_pseudo_id',
-           'ARRAY_TO_STRING(ARRAY(SELECT CONCAT(p.key, "::", COALESCE(p.value.string_value, CAST(p.value.int_value AS STRING), CAST(p.value.float_value AS STRING), CAST(p.value.double_value AS STRING))) FROM UNNEST(event_params) AS p), "; ")'
-        ]) }} AS event_id,
+    CONCAT(
+        'event_timestamp',
+        'event_name',
+        'user_pseudo_id',
+        ARRAY_TO_STRING(ARRAY(SELECT CONCAT(p.key, "::", COALESCE(p.value.string_value, CAST(p.value.int_value AS STRING), CAST(p.value.float_value AS STRING), CAST(p.value.double_value AS STRING))) FROM UNNEST(event_params) AS p), "; ")
+    ) AS event_id,
     PARSE_DATE('%Y%m%d', event_date) as event_date,
     TIMESTAMP_MICROS(event_timestamp) as event_ts,
     
@@ -159,12 +159,12 @@ WITH _source AS(
 _source_migrated AS(
   SELECT
     -- generate surrogate 'event' ID
-        {{ dbt_utils.generate_surrogate_key([
-           'event_timestamp',
-           'event_name',
-           'user_pseudo_id',
-           'ARRAY_TO_STRING(ARRAY(SELECT CONCAT(p.key, "::", COALESCE(p.value.string_value, CAST(p.value.int_value AS STRING), CAST(p.value.float_value AS STRING), CAST(p.value.double_value AS STRING))) FROM UNNEST(event_params) AS p), "; ")'
-        ]) }} AS event_id,
+    CONCAT(
+      'event_timestamp',
+      'event_name',
+      'user_pseudo_id',
+      ARRAY_TO_STRING(ARRAY(SELECT CONCAT(p.key, "::", COALESCE(p.value.string_value, CAST(p.value.int_value AS STRING), CAST(p.value.float_value AS STRING), CAST(p.value.double_value AS STRING))) FROM UNNEST(event_params) AS p), "; ")
+    ) AS event_id,
     PARSE_DATE('%Y%m%d', event_date) as event_date,
     TIMESTAMP_MICROS(event_timestamp) as event_ts,
     
@@ -309,6 +309,7 @@ events_aggregated as (
   SELECT
     event_date,
     event_ts,
+    event_id,
     session_id,
     user_pseudo_id,
     user_first_touch_ts,
@@ -425,10 +426,8 @@ events_aggregated as (
     MAX(srsltid) as srsltid
 
   FROM _merging
-  WHERE session_id <> 0
-  GROUP BY 1,2,3,4,5,6
+  GROUP BY 1,2,3,4,5,6,7
 )
 
 SELECT *
-  --DISTINCT event_date
 FROM events_aggregated

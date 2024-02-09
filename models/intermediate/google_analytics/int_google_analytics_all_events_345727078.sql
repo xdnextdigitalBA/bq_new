@@ -11,19 +11,7 @@
 }}
 
 WITH _raw AS(
-    SELECT *,
--- generate surrogate 'event' ID
-        {{ dbt_utils.generate_surrogate_key([
-           'event_ts',
-           'event_name',
-           'user_pseudo_id',
-           'page_title',
-           'page_location',
-           'page_referrer',
-           'page_path',
-           'percent_scrolled',
-           'session_engaged'
-        ]) }} AS event_id
+    SELECT *
     FROM {{ ref('stg_google_analytics_345727078')}}
 
 {% if is_incremental() %}
