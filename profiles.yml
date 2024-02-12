@@ -28,7 +28,7 @@ bq_new:
         project_id: new-ads-bigquery-data
         private_key_id: "{{ env_var('DBT_ENV_SECRET_BQ_PRKEY_ID') }}"
         private_key: "{{ env_var('DBT_ENV_SECRET_BQ_PRKEY') }}"
-        client_email: "{{ env_var('DBT_ENV_SECRET_BQ_CLIENT_MAIL') }}"
+        client_email: "dbt-402@new-ads-bigquery-data.iam.gserviceaccount.com" #"{{ env_var('DBT_ENV_SECRET_BQ_CLIENT_MAIL') }}"
         client_id: "{{ env_var('DBT_ENV_SECRET_BQ_CLIENT_ID') }}"
         auth_uri: https://accounts.google.com/o/oauth2/auth
         token_uri: https://oauth2.googleapis.com/token
