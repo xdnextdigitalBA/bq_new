@@ -26,7 +26,7 @@ bq_new:
       keyfile_json:
         type: service_account
         project_id: new-ads-bigquery-data
-        private_key_id: "{{ env_var('DBT_ENV_SECRET_BQ_PRKEY_ID') }}"
+        private_key_id: "671ddc4bbcaa58281659eb3e8b17441d9068e589" #"{{ env_var('DBT_ENV_SECRET_BQ_PRKEY_ID') }}"
         private_key: "{{ env_var('DBT_ENV_SECRET_BQ_PRKEY') }}"
         client_email: "{{ env_var('DBT_ENV_SECRET_BQ_CLIENT_MAIL') }}"
         client_id: "{{ env_var('DBT_ENV_SECRET_BQ_CLIENT_ID') }}"
