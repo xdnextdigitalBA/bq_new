@@ -1,0 +1,92 @@
+name: "dbt dev pipeline"
+
+on:
+  push:
+  workflow_dispatch:
+
+env:
+  ENV_CODE: ${{ vars.ENV_CODE }}
+  PROJ_CODE: ${{ vars.PROJ_CODE }}
+  BQ_ACCOUNT: ${{ secrets.BQ_ACCOUNT }}
+  BQ_PWD: ${{ secrets.BQ_PWD }}
+  DBT_ENV_SECRET_BQ_PRKEY_ID: ${{ secrets.BQ_PRKEY_ID }}
+  DBT_ENV_SECRET_BQ_PRKEY: ${{ secrets.BQ_PRKEY }}
+  DBT_ENV_SECRET_BQ_CLIENT_MAIL: ${{ secrets.BQ_CLIENT_MAIL }}
+  DBT_ENV_SECRET_BQ_CLIENT_ID: ${{ secrets.BQ_CLIENT_ID }}
+  DBT_ENV_SECRET_BQ_CLIENT_CERT_URL: ${{ secrets.BQ_CLIENT_CERT_URL }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: dev
+    
+    steps:
+      - name: "Step 01 - Checkout current branch"
+        id: step-01
+        uses: actions/checkout@v3
+      
+      - name: "Step 02 - Install dbt"
+        id: step-02
+        run: pip3 install dbt-core dbt-bigquery
+      
+      - name: "Step 03 - Verify dbt"
+        id: step-03
+        run: dbt --version
+      
+      - name: "Step 04 - Compile dbt"
+        id: step-04
+        working-directory: ./
+        run: |
+          ls -ltra
+          export DBT_PROFILES_DIR=$PWD
+          dbt deps
+          dbt debug -t $ENV_CODE
+          dbt compile -t $ENV_CODE
+      
+      - name: "Step 05 - Generate dbt docs"
+        id: step-05
+        working-directory: ./
+        run: |
+          export DBT_PROFILES_DIR=$PWD
+          dbt deps
+          dbt docs generate -t $ENV_CODE
+          cd target
+          mkdir ${{ github.workspace }}/docs
+          cp *.json *.html graph.gpickle ${{ github.workspace }}/docs
+          ls -ltra ${{ github.workspace }}/docs
+      
+      - name: "Step 06 - Upload pages to artifact"
+        id: step-06
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ${{ github.workspace }}/docs
+      
+      - name: "Step 07 - Zip artifact"
+        id: step-07
+        run: zip -jrq docs.zip ${{ github.workspace }}/docs
+      
+      - name: "Step 08 - Upload artifact for deployment job"
+        id: step-08
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs
+          path: docs.zip
+
+  deploy-to-github-pages: # Deploy to Github pages
+    needs: build # Add a dependency to the build job
+    permissions: # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source  
+    environment:
+      name: github-pages # Deploy to the github-pages environment
+      url: ${{ steps.deployment.outputs.page_url }}    
+    runs-on: ubuntu-latest # Specify runner + deployment step
+    
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action
+
+
+
+

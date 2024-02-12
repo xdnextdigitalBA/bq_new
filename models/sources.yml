@@ -6,12 +6,12 @@ version: 2
 
 sources:
   #Backenddaten
-  - name: new_backend
-    description: "alle Backenddaten"
-    project: data-ai-devel
-    dataset: new_stammdaten
-    tables:
-      - name: tr_abschluesse
+  #- name: new_backend
+  #  description: "alle Backenddaten"
+  #  project: data-ai-devel
+  #  dataset: new_stammdaten
+  #  tables:
+  #    - name: tr_abschluesse
       
   #Gemischte Quellen
   - name: bingads
