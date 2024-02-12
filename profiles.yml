@@ -25,7 +25,7 @@ bq_new:
       # These fields come from the service account json keyfile
       keyfile_json:
         type: service_account
-        project_id: oss-big-query-dashboard-prod
+        project_id: new-ads-bigquery-data
         private_key_id: "{{ env_var('DBT_ENV_SECRET_BQ_PRKEY_ID') }}"
         private_key: "{{ env_var('DBT_ENV_SECRET_BQ_PRKEY') }}"
         client_email: "{{ env_var('DBT_ENV_SECRET_BQ_CLIENT_MAIL') }}"
