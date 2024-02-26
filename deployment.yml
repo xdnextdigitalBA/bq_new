@@ -25,7 +25,7 @@ jobs:
        command: dbt run -m mart --exclude tag:daily tag:historic
  - name: On Demand für Tests und Bug-Fixing 
    targetName: dev
-   schedule: '0 0 1 */12 0' # Dieser Job wird automatisch alle 12 Monate einmal ausgeführt, damit er in Fivetran angezeigt werden kann.
+   schedule: '0 0 1 */12 *' # Dieser Job wird automatisch alle 12 Monate einmal ausgeführt, damit er in Fivetran angezeigt werden kann.
    steps:
      - name: Step 01 - Staging
        command: dbt run -m staging,tag:testing
