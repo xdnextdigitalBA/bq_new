@@ -23,3 +23,12 @@ jobs:
        command: dbt run -m intermediate --exclude tag:daily tag:historic
      - name: Step 03 - Mart
        command: dbt run -m mart --exclude tag:daily tag:historic
+ - name: On Demand für Tests und Bug-Fixing #Dieser Job wird nur bei Bedarf ausgeführt. Weise Modellen, die bei diesem Job ausgeführt werden sollen den Tag "testing" zu
+   targetName: dev
+   steps:
+     - name: Step 01 - Staging
+       command: dbt run -m staging,tag:testing
+     - name: Step 02 - Intermediate
+       command: dbt run -m intermediate,tag:testing
+     - name: Step 03 - Mart
+       command: dbt run -m mart,tag:testing
