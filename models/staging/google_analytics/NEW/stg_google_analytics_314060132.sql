@@ -284,7 +284,7 @@ _source_migrated AS(
   FROM {{ source('analytics_314060132_copy', 'events')}} as events
   LEFT JOIN UNNEST (event_params) as params
   LEFT JOIN UNNEST(items) as items 
-{% if is_incremental() %}
+  {% if is_incremental() %}
      WHERE
            -- events from the 'intraday' tables should always be included
            _table_suffix LIKE 'intraday_%'
@@ -296,7 +296,7 @@ _source_migrated AS(
            -- (events_intraday data can be mutated on transfer to events)
            OR PARSE_DATE('%Y%m%d', _table_suffix) >= DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY)
            )
-{% endif %}  
+  {% endif %}  
 ),
 
 _merging AS(
@@ -315,12 +315,12 @@ events_aggregated as (
     user_first_touch_ts,
     event_name,
 
---Kampagneninformationen
+  --Kampagneninformationen
     MAX(utm_campaign) as utm_campaign,
     MAX(utm_medium) as utm_medium,
     (CASE WHEN MAX(utm_source) = 'ig' THEN 'instagram' ELSE MAX(utm_source) END) as utm_source,
 
---Seiteninformationen
+  --Seiteninformationen
     MAX(page_title) as page_title,
     MAX(page_location) as page_location,
     MAX(page_referrer) as page_referrer,
@@ -328,16 +328,16 @@ events_aggregated as (
     MAX(percent_scrolled) as percent_scrolled,
     MAX(session_engaged) as session_engaged,
 
---Privacy-Infos
+  --Privacy-Infos
     MAX(analytics_storage) as analytics_storage,
     MAX(ads_storage) as ads_storage,
     MAX(uses_transient_token) as uses_transient_token,
 
---Kundenwertinformationen
+  --Kundenwertinformationen
     MAX(ltv_revenue) as ltv_revenue,
     MAX(ltv_currency) as ltv_currency,
 
---Geräteinformationen
+  --Geräteinformationen
     MAX(device_category) as device_category,
     MAX(device_brand) as device_brand,
     MAX(device_model_name) as device_model_name,
@@ -356,7 +356,7 @@ events_aggregated as (
     MAX(device_web_info_browser_version) as device_web_info_browser_version,
     MAX(browser_web_info_hostname) as browser_web_info_hostname,
 
---Gebietsinformationen
+  --Gebietsinformationen
     MAX(continent) as continent,
     MAX(country) as country,
     MAX(region) as region,
@@ -364,7 +364,7 @@ events_aggregated as (
     MAX(sub_continent) as sub_continent,
     MAX(metropolitan_area) as metropolitan_area,
 
---App-Informationen
+  --App-Informationen
     MAX(app_id) as app_id,
     MAX(app_version) as app_version,
     MAX(app_install_store) as app_install_store,
@@ -373,7 +373,7 @@ events_aggregated as (
 
     MAX(event_hostname) as event_hostname,
 
---E-Commerceinformationen
+  --E-Commerceinformationen
     MAX(total_item_quantity) as total_item_quantity,
     MAX(purchase_revenue_in_usd) as purchase_revenue_in_usd,
     MAX(purchase_revenue) as purchase_revenue,
@@ -386,7 +386,7 @@ events_aggregated as (
     MAX(unique_items) as unique_items,
     MAX(transaction_id) as transaction_id,
 
---Warenkorbinformationen
+  --Warenkorbinformationen
     MAX(item_id) as item_id,
     MAX(item_name) as item_name,
     MAX(item_brand) as item_brand,
@@ -414,7 +414,7 @@ events_aggregated as (
     MAX(creative_name) as creative_name,
     MAX(creative_slot) as creative_slot,
 
---Manuelle Trackingparameter
+  --Manuelle Trackingparameter
     MAX(manual_campaign_id) as manual_campaign_id,
     MAX(manual_campaign_name) as manual_campaign_name,
     MAX(manual_source) as manual_source,

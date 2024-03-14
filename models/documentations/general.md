@@ -4,7 +4,7 @@
 Willkommen zur Dokumentation der Data-Pipeline der NEW/Klickenergie.
 
 # Ansprechpartner
-**Benedict Altgassen:** benedict.altgassen@nextdigital.de
+**Kai Dubben:** kai.dubben@new.de
 
 # Informationen zur Strukturierung der Modelle
 **Staging:**
@@ -36,6 +36,7 @@ Tags werden primär auf der Ebene der "Mart-Modelle" verwendet. Sie dienen der s
 - **meta:** Modell enthält Daten aus Meta (Quellsystem)
 - **performancereporting:** Dient als Input für Performancereporting der NDG
 - **vermarktungsdashboard:** Dient als Input für das Vermarktungsdashboard der NDG
+- **testing:** Dient zur Markierung von Modellen, die sich noch in der Entwicklungsphase befinden und daher nur "On-Demand" ausgeführt werden sollen.
 
 # Weitere Informationen
 -
